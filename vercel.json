@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/ch_tuition_storefront_desktop/code.html",
+      "permanent": false
+    }
+  ]
+}
