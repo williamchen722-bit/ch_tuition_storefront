@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/product",
+      "destination": "/selective-math-pack",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
