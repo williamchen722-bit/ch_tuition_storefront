@@ -1046,38 +1046,70 @@
 
 
 <!-- Free Papers Modal -->
-<div id="free-papers-modal" class="fixed inset-0 bg-primary/80 z-[100] flex items-center justify-center hidden">
-    <div id="modal-container" class="w-full max-w-4xl transition-all duration-500 rounded-xl shadow-architectural border border-secondary/50 relative overflow-hidden flex flex-col md:flex-row mx-4 gold-border border-t-4" style="background-image: url('https://res.cloudinary.com/dsjbibh1o/image/upload/v1782210961/make_me_a_minimalist_premium_202606232035_iae4qp.jpg'); background-size: cover; background-position: center;">
-        
-        <button onclick="handleModalClose()" class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors p-1 rounded-full bg-surface-container-high hover:bg-error-container z-10">
-            <span class="material-symbols-outlined">close</span>
-        </button>
+<div id="free-papers-modal" class="fixed inset-0 bg-primary/80 z-[100] flex items-start md:items-center justify-center overflow-y-auto hidden">
+    <div id="modal-container" class="w-full max-w-4xl transition-all duration-500 rounded-xl shadow-architectural border border-secondary/50 relative flex flex-col md:flex-row mx-4 my-4 md:my-0 gold-border border-t-4" style="background-image: url('https://res.cloudinary.com/dsjbibh1o/image/upload/v1782210961/make_me_a_minimalist_premium_202606232035_iae4qp.jpg'); background-size: cover; background-position: center;">
 
         <!-- Left Column (Headers and Form) -->
-        <div id="modal-left-col" class="w-full md:w-1/2 flex flex-col p-8 bg-[#fcf9f8]/90">
-            <!-- Stage 1 Header -->
-            <div id="stage1-header" class="pb-4 text-center md:text-left">
+        <div id="modal-left-col" class="w-full md:w-1/2 flex flex-col p-6 md:p-8 bg-[#fcf9f8]/90 rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+            <!-- Close button row - always visible at top on mobile -->
+            <div class="flex items-start justify-between mb-3 md:hidden">
+                <div class="flex-1">
+                    <!-- Stage 1 Header mobile -->
+                    <div id="stage1-header-mobile">
+                        <h2 class="font-display-lg text-2xl text-primary tracking-tight mb-1">Unlock 4 Free Mini Tests</h2>
+                    </div>
+                    <!-- Stage 2 Header mobile -->
+                    <div id="stage2-header-mobile" class="hidden">
+                        <h2 class="font-display-lg text-2xl text-error tracking-tight mb-1">Wait, are you sure?</h2>
+                    </div>
+                </div>
+                <button onclick="handleModalClose()" class="ml-3 shrink-0 text-on-surface-variant hover:text-error transition-colors p-2 rounded-full bg-surface-container-high hover:bg-error-container" aria-label="Close">
+                    <span class="material-symbols-outlined text-2xl">close</span>
+                </button>
+            </div>
+
+            <!-- Stage 1 Header (desktop) -->
+            <div id="stage1-header" class="pb-4 text-center md:text-left hidden md:block">
                 <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight mb-2">Unlock 4 Free Mini Tests</h2>
                 <p class="font-body-md text-sm text-on-surface-variant uppercase tracking-wide font-semibold">
                     ENTER YOUR NAME AND EMAIL BELOW, AND WE'LL INSTANTLY SEND YOU 4 FREE SELECTIVE MATH TESTS TO GIVE YOUR CHILD A HEAD START.
                 </p>
             </div>
 
-            <!-- Stage 2 Header -->
-            <div id="stage2-header" class="hidden pb-4 text-center md:text-left">
+            <!-- Stage 1 subtitle (mobile only) -->
+            <div id="stage1-subtitle-mobile" class="md:hidden pb-3">
+                <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wide font-semibold">
+                    ENTER YOUR NAME AND EMAIL BELOW, AND WE'LL INSTANTLY SEND YOU 4 FREE SELECTIVE MATH TESTS.
+                </p>
+            </div>
+
+            <!-- Stage 2 Header (desktop) -->
+            <div id="stage2-header" class="hidden pb-4 text-center md:text-left md:block">
                 <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-error tracking-tight mb-2">Wait, are you sure?</h2>
                 <p class="font-body-md text-sm text-on-surface-variant mb-4 font-semibold uppercase tracking-wide">
                     Just for you, we'll throw in the 16 PAGE CH Tuition Selective Math Prep Guide - Completely FREE. Don't miss out on having your child be the most prepared possible.
                 </p>
             </div>
 
+            <!-- Stage 2 subtitle (mobile only) -->
+            <div id="stage2-subtitle-mobile" class="hidden md:hidden pb-3">
+                <p class="font-body-md text-xs text-on-surface-variant uppercase tracking-wide font-semibold">
+                    Just for you, we'll throw in the 16 PAGE CH Tuition Selective Math Prep Guide - Completely FREE!
+                </p>
+            </div>
+
+            <!-- Close button (desktop only, absolute) -->
+            <button onclick="handleModalClose()" class="hidden md:block absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors p-1 rounded-full bg-surface-container-high hover:bg-error-container z-10" aria-label="Close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
             <div class="pb-2 flex-grow">
                 <iframe data-tally-src="https://tally.so/embed/J9G95R?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="220" frameborder="0" marginheight="0" marginwidth="0" title="Free Mini Tests Form"></iframe>
             </div>
         </div>
 
-        <!-- Right Column (Images & Details) -->
-        <div id="modal-right-col" class="w-full md:w-1/2 bg-[#f6f3f2]/80 flex flex-col items-center justify-center p-8 border-l border-outline-variant">
+        <!-- Right Column (Images & Details) - hidden on mobile -->
+        <div id="modal-right-col" class="hidden md:flex w-full md:w-1/2 bg-[#f6f3f2]/80 flex-col items-center justify-center p-8 border-l border-outline-variant rounded-b-xl md:rounded-r-xl md:rounded-bl-none">
             <!-- Stage 1 Image -->
             <div id="stage1-image-container" class="flex flex-col items-center justify-center w-full h-full">
                 <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781785263/Stack_four_mini_tests_202606182220_1_j5sxff.jpg" alt="Practice Question" class="max-h-[35vh] w-auto object-contain shadow-architectural rounded-lg hover:scale-105 transition-transform duration-300">
@@ -1092,7 +1124,7 @@
                         <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>An overview of the test format and scoring system</span></li>
                         <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>Key dates and a simplified application timeline</span></li>
                         <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>A detailed list of all math topics your child needs to master</span></li>
-                        <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>A 4-step preparation framework that’s easy to follow</span></li>
+                        <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>A 4-step preparation framework that's easy to follow</span></li>
                         <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>Insights into reasoning-style questions and multi-step problems</span></li>
                         <li class="upsell-list-item opacity-0 transition-opacity duration-1000 flex items-start gap-2"><span class="mt-0.5">✅</span> <span>Test strategies to build speed, accuracy and confidence</span></li>
                     </ul>
@@ -1102,6 +1134,7 @@
 
     </div>
 </div>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
@@ -1115,9 +1148,14 @@
     let hasSeenUpsell = false;
     function handleModalClose() {
         if (!hasSeenUpsell) {
-            // Stage 1 -> Stage 2: Headers
+            // Stage 1 -> Stage 2: Headers (desktop)
             document.getElementById('stage1-header').classList.add('hidden');
             document.getElementById('stage2-header').classList.remove('hidden');
+            // Stage 1 -> Stage 2: Headers (mobile)
+            document.getElementById('stage1-header-mobile').classList.add('hidden');
+            document.getElementById('stage2-header-mobile').classList.remove('hidden');
+            document.getElementById('stage1-subtitle-mobile').classList.add('hidden');
+            document.getElementById('stage2-subtitle-mobile').classList.remove('hidden');
             
             // Stage 1 -> Stage 2: Right side contents
             document.getElementById('stage1-image-container').classList.add('hidden');
@@ -1152,9 +1190,14 @@
     function openFreePapersModal() {
         document.getElementById('free-papers-modal').classList.remove('hidden');
         
-        // Reset to Stage 1
+        // Reset to Stage 1 (desktop)
         document.getElementById('stage1-header').classList.remove('hidden');
         document.getElementById('stage2-header').classList.add('hidden');
+        // Reset to Stage 1 (mobile)
+        document.getElementById('stage1-header-mobile').classList.remove('hidden');
+        document.getElementById('stage2-header-mobile').classList.add('hidden');
+        document.getElementById('stage1-subtitle-mobile').classList.remove('hidden');
+        document.getElementById('stage2-subtitle-mobile').classList.add('hidden');
         
         document.getElementById('stage1-image-container').classList.remove('hidden');
         
