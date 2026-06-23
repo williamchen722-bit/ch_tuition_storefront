@@ -1,9 +1,25 @@
 {
-  "redirects": [
+  "cleanUrls": true,
+  "rewrites": [
     {
       "source": "/",
-      "destination": "/ch_tuition_storefront_desktop/code.html",
-      "permanent": false
+      "destination": "/ch_tuition_storefront_desktop/code.html"
+    },
+    {
+      "source": "/selective-math-pack",
+      "destination": "/ch_tuition_storefront_desktop/product.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/ch_tuition_storefront_desktop/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/ch_tuition_storefront_desktop/terms.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/ch_tuition_storefront_desktop/$1"
     }
   ]
 }
