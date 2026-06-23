@@ -14,15 +14,15 @@
     },
     {
       "source": "/selective-math-pack",
-      "destination": "/ch_tuition_storefront_desktop/product.html"
+      "destination": "/ch_tuition_storefront_desktop/product"
     },
     {
       "source": "/privacy",
-      "destination": "/ch_tuition_storefront_desktop/privacy.html"
+      "destination": "/ch_tuition_storefront_desktop/privacy"
     },
     {
       "source": "/terms",
-      "destination": "/ch_tuition_storefront_desktop/terms.html"
+      "destination": "/ch_tuition_storefront_desktop/terms"
     },
     {
       "source": "/(.*)",
