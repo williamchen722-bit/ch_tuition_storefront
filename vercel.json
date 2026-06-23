@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/ch_tuition_storefront_desktop/index.html"
+      "destination": "/ch_tuition_storefront_desktop/"
     },
     {
       "source": "/selective-math-pack",
