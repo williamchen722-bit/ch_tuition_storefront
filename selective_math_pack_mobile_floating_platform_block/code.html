@@ -1,0 +1,432 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CH Tuition - Selective Math Pack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#241a00",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-container": "#21221f",
+                        "secondary-fixed": "#ffe088",
+                        "tertiary": "#0b0b09",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#465f88",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-container-high": "#eae7e7",
+                        "primary": "#000a1e",
+                        "secondary": "#735c00",
+                        "tertiary-fixed": "#e4e2dd",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed": "#001b3d",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#e9c349",
+                        "outline": "#74777f",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "inverse-primary": "#aec7f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#44474e",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-primary-container": "#708ab5",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#8a8985",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "primary-container": "#002147",
+                        "on-secondary-container": "#745c00",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "secondary-container": "#fed65b",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "quote": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "quote": ["24px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Accordion Styles */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-toggle.active + .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .accordion-toggle .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .accordion-toggle.active .icon-rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- [ZONE 1: WIDESCREEN NAVIGATION & ANNOUNCEMENT] -->
+<!-- Announcement Bar -->
+<div class="w-full bg-primary text-on-primary py-2 px-margin-mobile md:px-margin-desktop text-center">
+<p class="font-label-caps text-label-caps uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-sm" data-icon="bolt" data-weight="fill">bolt</span>
+            FLASH SALE: Use code EXAMREADY for 20% OFF — Ends Today!
+        </p>
+</div>
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-display-lg text-headline-md font-bold text-primary tracking-tight" href="#">
+                CH TUITION
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary pb-1 hover:text-secondary transition-colors duration-200" href="#">Resources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Testimonials</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="font-body-md text-body-md text-primary font-semibold hover:text-secondary transition-colors duration-200" href="#">Login</a>
+<button aria-label="Cart" class="relative text-primary hover:text-secondary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-2 bg-secondary text-on-secondary text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 pb-section-gap">
+<!-- [ZONE 2: SPLIT-SCREEN HERO (2-COLUMN GRID)] -->
+<section class="grid grid-cols-1 gap-gutter mb-section-gap">
+<!-- LEFT COLUMN: Image Gallery -->
+<div class="flex flex-col gap-4">
+<!-- Main Preview -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden group">
+<img alt="Academic preview paper" class="w-full h-full object-cover mix-blend-multiply" data-alt="A pristine, high-resolution mockup of an academic examination paper resting on a minimalist white desk. The lighting is soft and high-key, illuminating the crisp typography and structured layout of the document. A subtle, deep navy pen lies adjacent, hinting at intellectual endeavor. The scene evokes a premium, bespoke educational consultancy environment, characterized by architectural clarity and focused excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALHiv6gvx7B8dPzEzUNg4nPljdVGsLZNtFv77oA8Vl8SBgCgALDJkwMc6hF7Uh_mZUsoqXVFQtUvTXCg4A31gs3mvqsePGMUE8tHEmqiAbrx7u7EMau5DNt2NVsuDOspPBl_djn-Z7DUCPR4P5Blbi7jkX1GSePwutRWdI9CzpTLduHU8zZLqnE8aj9epvBcIrLxdoUV2Jyo-0DHuDXjOogdNZH6e8UUlKLhDdNl127NUCc2J23PHo056_RiOs5ml8YxI47lSknTgH">
+<!-- Navigation Arrows -->
+<div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button aria-label="Previous image" class="w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button aria-label="Next image" class="w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Thumbnail Strip -->
+<div class="grid grid-cols-5 gap-2">
+<div class="aspect-square bg-surface-container-low border-2 border-secondary rounded overflow-hidden cursor-pointer">
+<img alt="Thumbnail 1" class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmJ0UqJGyRyPlsZl0G7nEfNLZrFTxXCyHD4ixP313Jz24I9aE-may6cr8QuUpcYiFOte1RoxSVKX4vAmeji3Fw98n134EgyOXGtcFNWhGghaJTupJMyJnsuNqoiSCq-RS9E-_HGWU4kGeuh7qisvWdQBVtCZ3mH9ey1mexzF7S7rwn3yL5G7NtPd3TuRO7NjXhrUd0BsflcSFHS-IOy9nfVz8MAU7FtPXg_Ormsbi4wUxYHPZXgg5tjAosSSaM5BMPxpAWKW2KjrmO">
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100">
+<img alt="Thumbnail 2" class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmXK33DRjIGvFMM0oz4QaG0B9ov7cFi0B4We0e2rp4DWFCl8IhsA74VNKaTYUaPHQ5YORFxqQzV1ttxIGRLbuZ2uMAkQ0MCJr8Uuoia7ggl_YZos4Fg5Y6JG115nIlNR5EVVo3p-bkaUzG8ySErKF0dMk03IlnDDjvt6KjxS9FDP0_95ddlR3ZGgsw6jPYOAl5wj6z1v66PIx8_DGgG0umttpc-ZhK0Euy2WPygIbvC1xnqkg7SB38Vmou-aC7saP9UiCjW52fbDpN">
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100">
+<img alt="Thumbnail 3" class="w-full h-full object-cover mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQi5DAfmrvqTWd1vbMWcU928nlCaseDJj3bLnSovY0YmSQ-Y9yzZlXmMsbb304uXRcN1aLBgEKZqHr9wdsJGtw8Y4RGNxTW7WcAGxQ-keWuPTjQC7j15SSdgDYvw-Gxkvl3fMfCRj1sPikZGZhIBJQN7wF0f915ou1A1LaQzxAT3rdXGHtmdwLxS_QJpTVh7xScCQQzA1WyeysPn4yHD3waaaFKMesff8codGLTGsVVuaS9wRuFDipF3ykPrFlmMiuEYXBoBUNp4Fi">
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100 flex items-center justify-center bg-surface-container">
+<span class="font-label-caps text-label-caps text-on-surface-variant">+3</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Product Details & Conversion -->
+<div class="flex flex-col pt-4 md:pl-8">
+<!-- Row 1: Rating -->
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">4.9/5 Rating | From 500+ Verified Parents</span>
+</div>
+<!-- Row 2: Headline -->
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6">Selective Math Test Prep Package (90 Papers)</h1>
+<!-- Row 3: Pricing -->
+<div class="flex items-baseline gap-4 mb-6">
+<span class="font-headline-lg text-headline-md text-error font-bold">$19.99</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant line-through">$69.99<br></span>
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-3 py-1 rounded-full uppercase tracking-wider">Save 70+%</span>
+</div>
+<!-- Row 4: Bullet Points -->
+<ul class="space-y-3 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="horizontal_rule">horizontal_rule</span>
+<span class="font-body-lg text-body-lg text-on-surface">Format-aligned for 2027 test structure and difficulty</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="horizontal_rule">horizontal_rule</span>
+<span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions for independent review</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="horizontal_rule">horizontal_rule</span>
+<span class="font-body-lg text-body-lg text-on-surface">Master Exam Speed with timed section drills</span>
+</li>
+</ul>
+<!-- Row 5: CTA -->
+<button class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-6 group">
+<span class="">Add to Cart / Instant Download</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Row 6: Trust Icons -->
+<div class="flex flex-wrap items-center gap-6 pt-4 border-t border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Instant PDF Download</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">100% Risk-Free Guarantee</span>
+</div>
+</div>
+</div>
+</section>
+<!-- [ZONE 3: DOUBLE-COLUMN DRILLDOWN (70/30 SPLIT)] -->
+<section class="grid grid-cols-1 gap-gutter mb-section-gap relative">
+<!-- LEFT 70%: Content Drilldown -->
+<div class="flex flex-col gap-12">
+<!-- Section A: Deep Dive -->
+<div class="bg-primary text-on-primary p-8 rounded-xl shadow-sm mb-8">
+<h2 class="font-headline-md text-headline-md text-on-primary border-b border-secondary/30 pb-4 mb-6 flex items-center">Access Our Online Testing Platform<span class="inline-flex items-center bg-secondary-container text-on-secondary-container font-label-caps text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wider ml-3 align-middle">FREE BONUS</span></h2>
+<p class="font-body-lg text-body-lg text-on-primary/90 mb-0">Transform your practice with our interactive testing environment. Simply enter your unique purchase code on our platform to unlock timed simulations, instant feedback, and detailed performance analytics that mirror the actual exam experience.</p>
+</div><div class="border border-secondary/20 rounded-lg bg-primary/50 overflow-hidden mt-4">
+<div class="border-b border-secondary/20 last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-primary/70 transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-on-primary font-semibold">Watch Platform Demo</span>
+<span class="material-symbols-outlined text-secondary-container icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-primary/30 px-6 pb-6">
+<div class="relative aspect-video bg-primary rounded-lg flex items-center justify-center group cursor-pointer overflow-hidden border border-secondary/20">
+<span class="material-symbols-outlined text-6xl text-on-primary opacity-80 group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-primary/70 mt-4 text-center">See how our proprietary engine tracks your progress in real-time.</p>
+</div>
+</div>
+</div><section class="mt-16 pt-16 border-t border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Real Results, Proven Success</h2>
+<div class="grid grid-cols-1 gap-8">
+<!-- iMessage Testimonial Card -->
+<!-- Text Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-6">"The level of detail in the solutions is unmatched. My son finally understands the logic behind the Thinking Skills questions."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">SL</div>
+<p class="font-body-md text-body-md text-primary font-semibold">Sarah L., Year 6 Parent</p>
+</div>
+</div>
+<!-- Text Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant shadow-sm">
+<div class="flex text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-6">"We tried three other providers before finding CH Tuition. These are the only ones that actually match the difficulty of the real exam."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold">DK</div>
+<p class="font-body-md text-body-md text-primary font-semibold">David K.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant shadow-sm"><div class="flex text-secondary mb-4"><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span></div><p class="font-body-lg text-body-lg text-on-surface mb-6">"The exam alignment is perfect. My daughter felt so much more confident after practicing with these papers. Highly recommend for Selective prep."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">JS</div><p class="font-body-md text-body-md text-primary font-semibold">Jane S., Year 6 Parent</p></div></div><div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant shadow-sm"><div class="flex text-secondary mb-4"><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span></div><p class="font-body-lg text-body-lg text-on-surface mb-6">"Finally, papers that actually match the difficulty of the real test. The thinking skills section is especially well-crafted."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary font-bold">MR</div><p class="font-body-md text-body-md text-primary font-semibold">Michael R.</p></div></div><div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant shadow-sm"><div class="flex text-secondary mb-4"><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span><span class="material-symbols-outlined text-sm" data-weight="fill">star</span></div><p class="font-body-lg text-body-lg text-on-surface mb-6">"Fast delivery and the solutions are very easy to follow. A great investment for my son's scholarship prep."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">ST</div><p class="font-body-md text-body-md text-primary font-semibold">Sarah T.</p></div></div></div>
+</section>
+<!-- Section B & C: Accordions -->
+<div class="border-t border-outline-variant pt-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Curriculum &amp; Specifications</h3>
+<div class="border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<!-- Accordion Item 1 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Full Syllabus &amp; Subject Coverage</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Covers advanced arithmetic, algebraic reasoning, geometric spatial awareness, and complex data interpretation as prescribed by the latest examination boards. Includes 10 full-length rigorous practice papers.</p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Solution Walkthroughs</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Every question is accompanied by a bespoke, step-by-step breakdown. We detail not just the 'what', but the 'how' and 'why', modeling the most efficient path to the correct answer to save precious seconds in the exam hall.</p>
+</div>
+</div>
+<!-- Accordion Item 3 (FAQ) -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Print Instructions &amp; Formatting</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Files are delivered in high-resolution PDF format, optimized for standard A4 home printing. Margins and layouts exactly replicate the physical examination papers to ensure psychological familiarity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 30%: Sticky Purchase Widget -->
+</section>
+<!-- [ZONE 4: WIDE-ROW SOCIAL PROOF & CROSS-SELL] -->
+<section class="mb-section-gap">
+<!-- Guarantee Block -->
+<div class="w-full bg-primary text-on-primary rounded-lg p-12 text-center mb-16 relative overflow-hidden border-t-4 border-secondary">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 block mx-auto" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md mb-4">Risk-Free Accuracy Guarantee</h3>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto">
+                    We stand behind the architectural precision of our resources. If you find our materials do not accurately reflect the current syllabus standards, we offer a full refund within 14 days.</p>
+</div>
+<!-- Cross-sell Grid -->
+<div class="border-t border-outline-variant pt-12">
+<h3 class="font-headline-md text-headline-md text-primary mb-8 text-center">Frequently Bought Together</h3>
+<div class="grid grid-cols-1 gap-8">
+<!-- Cross-sell Card 1 -->
+<div class="group border border-outline-variant hover:border-secondary rounded-lg overflow-hidden bg-surface-container-lowest transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden border-b border-outline-variant">
+<img alt="English pack" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A focused close-up of a premium fountain pen resting on dense text within a thick academic study guide. The lighting is crisp and cool, emphasizing the sharp typography and professional grade of the materials. The setting is a quiet, intellectual study space, reflecting an atmosphere of serious academic pursuit and elite preparation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjq1vRvxA-ixtq6iCRRv3MkqWv1T3pLv6ShTXELx7egkFzT7ydlcgPtrjtTOw_3SLwPw0jVtgjpnfJ25I16HbAGn52jeMQyAYjQq5np9YvjjIAK_TIZVmGWRKVD314BLibscxpq7pSAtoBW0R-D9W39EXwQiQhHghuhPLVRNnlq-1qmeuZjNv_1kDtvixpulMCOEcKvBcchErCtmQcBf4JFgDYq4jRhGh_2-fQ5k6a1rSNPe_ZXleJjCQWUGgfm9Rk63yRPu0-tVEF">
+</div>
+<div class="p-6">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold mb-2">Advanced English Comprehension</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Mastering inference and complex texts.</p>
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-primary font-bold">£35.00</span>
+<button class="font-label-caps text-label-caps text-secondary uppercase hover:text-primary transition-colors flex items-center gap-1">
+                                    Add <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cross-sell Card 2 -->
+<div class="group border border-outline-variant hover:border-secondary rounded-lg overflow-hidden bg-surface-container-lowest transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden border-b border-outline-variant">
+<img alt="Verbal Reasoning pack" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="An open, minimalist notebook with perfectly aligned geometric diagrams and annotations, illuminated by natural light from an unseen window. The aesthetic is clean, structured, and architectural, utilizing stark whites and deep navy accents. The image conveys clarity, logic, and the systematic approach required for elite academic success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAevAr6MD9Qr-k4mhEG4Z8rFGolB9ZXmHxV2ZfrSrXW_n7YhMmla3E7sSMxSKsoTizYk18P5BPCZFzguP32B17CxW1bUfOuq9h7gGLjLC0SrNBSPcT4AZkLf6XmRgf0CGDaHf_LIYs8dil14yz1WdgsrzkW5Ik7-FOcKqmIFXbNAOkFYQxum-m8KzeKJcgwvnnY0YrkAV0gde4niwJ7IwAdKSZXTHAqlErUHDJAH3NL2XvkxDJAfh5eMXDTtSPt1EvC4_sRjnCxDkie">
+</div>
+<div class="p-6">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold mb-2">Verbal Reasoning Matrix</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Pattern recognition and vocabulary building.</p>
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-primary font-bold">£30.00</span>
+<button class="font-label-caps text-label-caps text-secondary uppercase hover:text-primary transition-colors flex items-center gap-1">
+                                    Add <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cross-sell Card 3 -->
+<div class="group border border-outline-variant hover:border-secondary rounded-lg overflow-hidden bg-surface-container-lowest transition-all duration-300">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden border-b border-outline-variant relative">
+<div class="absolute top-2 right-2 bg-primary text-on-primary font-label-caps text-[10px] px-2 py-1 rounded-sm uppercase z-10">Bundle</div>
+<img alt="Full curriculum bundle" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A meticulously organized stack of premium academic portfolios bound in subtle navy and gold. They sit on a substantial polished desk against a soft, bright background. The composition is highly symmetrical and authoritative, signaling a comprehensive, bespoke consultancy package designed for the highest level of educational attainment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdC-kRMfK-MK68ii1mE76qCPQpmzi2JoX0ktXJFeEYvAOwxgDHhDmGTXzxBIDGAt-9-JTrO-t28UPEs12TZc20vA6Un8ygzuCfhDQ8BOwMlpOtSxGLRUT3mhucKrgd0fcGZlACox1b8_Y1Q7_-Azd2B_Vp66RAwFXKY_o66Ve_bwzxiPVDggYhWW6Q7inOl-9IkLwke8wgoSl3Oj8iGQM96QYxbpRjKDG8QDOu_xKge-10kdCIuC8smcPBtMLJxLi6muKg0FF3W-p0">
+</div>
+<div class="p-6">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold mb-2">The Complete Selective Archive</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">All subjects. Maximum preparation.</p>
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-primary font-bold">£110.00</span>
+<button class="font-label-caps text-label-caps text-secondary uppercase hover:text-primary transition-colors flex items-center gap-1">
+                                    Add <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary border-t border-secondary w-full">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-section-gap max-w-container-max mx-auto gap-8">
+<div class="font-display-lg text-headline-md text-on-primary tracking-tight">
+                CH TUITION
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-primary opacity-80 hover:text-secondary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary opacity-80 hover:text-secondary-fixed transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary opacity-80 hover:text-secondary-fixed transition-colors duration-200" href="#">Admissions Advice</a>
+<a class="font-body-md text-body-md text-on-primary opacity-80 hover:text-secondary-fixed transition-colors duration-200" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-on-primary-container text-sm text-center md:text-right">
+                © 2024 CH Tuition. Bespoke Excellence in Academic Consultancy.
+            </div>
+</div>
+</footer>
+
+
+</body></html>
