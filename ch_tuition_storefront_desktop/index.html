@@ -210,6 +210,12 @@
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+
+<!-- PostHog -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group reset groups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_AMPgFuYB49DAxh32rrnkA7GxxT3rBKHUEnZXF2XiP6fB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only'})
+</script>
 </head>
 <body class="bg-surface text-on-surface antialiased" style="overflow-x:hidden">
 <!-- TopNavBar -->
@@ -289,7 +295,7 @@
 <div data-aos="zoom-in-up" data-aos-delay="200" class="w-full md:w-96 bg-surface-container-lowest border-t border-primary group flex flex-col h-full shadow-architectural transition-transform duration-300 hover:-translate-y-1">
 <div class="relative p-6 bg-surface-container-low flex justify-center items-center h-80">
 <div class="absolute top-4 left-4 bg-primary-container text-secondary-fixed font-label-caps text-label-caps px-3 py-1 uppercase tracking-widest z-10">Bestseller</div>
-<img alt="Math Selective Prep Test Pack book cover" class="max-h-full w-auto object-contain shadow-md" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png">
+<img loading="lazy" alt="Math Selective Prep Test Pack book cover" class="max-h-full w-auto object-contain shadow-md" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png">
 </div>
 <div class="p-6 flex flex-col flex-grow">
 <h3 class="font-headline-md text-headline-md text-primary mb-1">Math Selective Prep Test Pack (20 Papers)</h3>
@@ -333,10 +339,7 @@
     <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
     <span>700+ practice questions (plus an extra 100 bonus questions)</span>
   </li>
-  <li class="flex items-start gap-2">
-    <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
-    <span>800+ hours of practice</span>
-  </li>
+
   <li class="flex items-start gap-2">
     <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
     <span>Co-developed and vetted with feedback from over 50 local families to target the exact traps that trip students up on test day.</span>
@@ -1112,12 +1115,12 @@
         <div id="modal-right-col" class="hidden md:flex w-full md:w-1/2 bg-[#f6f3f2]/80 flex-col items-center justify-center p-8 border-l border-outline-variant rounded-b-xl md:rounded-r-xl md:rounded-bl-none">
             <!-- Stage 1 Image -->
             <div id="stage1-image-container" class="flex flex-col items-center justify-center w-full h-full">
-                <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781785263/Stack_four_mini_tests_202606182220_1_j5sxff.jpg" alt="Practice Question" class="max-h-[35vh] w-auto object-contain shadow-architectural rounded-lg hover:scale-105 transition-transform duration-300">
+                <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781785263/Stack_four_mini_tests_202606182220_1_j5sxff.jpg" alt="Practice Question" class="max-h-[35vh] w-auto object-contain shadow-architectural rounded-lg hover:scale-105 transition-transform duration-300">
             </div>
 
             <!-- Stage 2 Upsell Image + Bullet points -->
             <div id="stage2-upsell-container" class="hidden w-full flex-col items-center justify-center transition-opacity duration-[2000ms] opacity-0">
-                <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1782214007/can_you_change_the_2026_202606232126_cikeew.jpg" alt="Selective Math Prep Guide" class="max-h-[30vh] w-auto object-contain shadow-architectural hover:-translate-y-1 transition-transform duration-300 mb-6">
+                <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1782214007/can_you_change_the_2026_202606232126_cikeew.jpg" alt="Selective Math Prep Guide" class="max-h-[30vh] w-auto object-contain shadow-architectural hover:-translate-y-1 transition-transform duration-300 mb-6">
                 <div class="w-full text-left">
                     <p class="font-body-md text-sm text-on-surface font-bold mb-3">Includes:</p>
                     <ul class="space-y-2 text-sm text-on-surface-variant font-semibold">
@@ -1135,7 +1138,7 @@
     </div>
 </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
         duration: 800,
@@ -1269,5 +1272,5 @@
     </div>
 </div>
 
-<script src="cart.js?v=7"></script>
+<script defer src="cart.js?v=7"></script>
 </body></html>
