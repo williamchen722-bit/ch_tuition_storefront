@@ -163,6 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Global Window Methods for Inline HTML calls
     window.addToCart = (productObj) => {
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'AddToCart', {
+                content_name: productObj.name,
+                currency: 'AUD',
+                value: productObj.price
+            });
+        }
+        
         const existingItem = cart.find(item => item.id === productObj.id);
         if (existingItem) {
             existingItem.quantity += 1;
@@ -230,6 +238,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout', {
+                        currency: 'AUD',
+                        value: getCartTotal(),
+                        num_items: cart.length
+                    });
+                }
                 window.location.href = 'https://buy.stripe.com/7sYbJ13pocVNa8wfd7cMM03';
             }
         });

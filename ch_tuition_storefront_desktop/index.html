@@ -1292,4 +1292,16 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 </div>
 
 <script src="cart.js?v=7"></script>
+<script>
+    // Track Lead event when Tally form is submitted
+    window.addEventListener('message', (e) => {
+        if (e.data && typeof e.data === 'string' && e.data.includes('Tally.FormSubmitted')) {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Free Mini Tests Signup'
+                });
+            }
+        }
+    });
+</script>
 </body></html>
