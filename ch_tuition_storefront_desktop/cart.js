@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
                 if (typeof fbq !== 'undefined') {
-                    fbq('track', 'InitiateCheckout', {
+                    fbq('track', 'Purchase', {
                         currency: 'AUD',
                         value: getCartTotal(),
                         num_items: cart.length
