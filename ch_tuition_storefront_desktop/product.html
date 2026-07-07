@@ -325,7 +325,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
             Order Right Now And Receive Free Gifts
             <span class="bg-error text-on-error px-2 py-0.5 rounded text-xs font-mono font-bold flex items-center gap-1 shadow-sm">
                 <span class="material-symbols-outlined text-[12px]">timer</span>
-                <span id="free-gift-timer">30:00</span>
+                <span id="free-gift-timer">10:00</span>
             </span>
         </h3>
     </div>
@@ -358,7 +358,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
         const timerEl = document.getElementById('free-gift-timer');
         if (!timerEl) return;
         
-        const DURATION = 30 * 60 * 1000; // 30 mins
+        const DURATION = 10 * 60 * 1000; // 10 mins
         let endTime = localStorage.getItem('freeGiftTimerEndTime');
         
         if (!endTime || new Date().getTime() > endTime) {
