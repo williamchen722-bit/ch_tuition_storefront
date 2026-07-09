@@ -238,13 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Purchase', {
-                        currency: 'AUD',
-                        value: getCartTotal(),
-                        num_items: cart.length
-                    });
-                }
                 window.location.href = 'https://buy.stripe.com/7sYbJ13pocVNa8wfd7cMM03';
             }
         });
