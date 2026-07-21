@@ -126,7 +126,7 @@
             overflow: hidden;
         }
         .accordion-toggle.active + .accordion-content {
-            max-height: 500px;
+            max-height: 2500px;
             opacity: 1;
         }
         .accordion-toggle .icon-rotate {
@@ -209,10 +209,23 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
         <span class="material-symbols-outlined text-2xl">shopping_cart</span>
         <span class="cart-badge hidden absolute -top-1 -right-2 bg-error text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
     </button>
-    <button class="text-white focus:outline-none">
+    <button id="mobile-menu-btn" class="text-white focus:outline-none">
         <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
 </div>
+</div>
+
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer" class="fixed inset-0 bg-[#e06666] z-[100] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+    <div class="px-margin-mobile py-4 flex justify-between items-center border-b border-white/20 h-20">
+        <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781780686/2639019b-8e6e-43b1-a23f-b0eaff098a45.png" alt="CH Tuition Logo" class="h-10 w-auto object-contain">
+        <button id="close-mobile-nav" class="text-white focus:outline-none">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col px-margin-mobile py-8 gap-6 text-xl">
+        <a href="/" class="text-white font-bold pb-2 border-b border-white/10">Home</a>
+    </div>
 </div>
 </header>
 
@@ -231,11 +244,11 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <span>Bestseller</span>
 </div>
 <!-- Navigation Arrows -->
-<div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<button id="prev-btn" aria-label="Previous image" class="w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<div class="absolute inset-0 flex items-center justify-between px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<button id="prev-btn" aria-label="Previous image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
 <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
 </button>
-<button id="next-btn" aria-label="Next image" class="w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<button id="next-btn" aria-label="Next image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
 <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
 </button>
 </div>
@@ -1687,11 +1700,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function updateGallery(index) {
         currentIndex = index;
-        mainImg.style.opacity = 0;
-        setTimeout(() => {
-            mainImg.src = images[currentIndex];
-            mainImg.style.opacity = 1;
-        }, 150);
+        mainImg.src = images[currentIndex];
+        mainImg.style.opacity = 1;
         
         // Update active thumbnail classes
         thumbnails.forEach((thumb, idx) => {
@@ -1792,6 +1802,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalImg.src = images[currentIndex];
                 }
             }
+        });
+    }
+    // Mobile Nav Logic
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    const closeMobileNav = document.getElementById('close-mobile-nav');
+    if (mobileBtn && mobileDrawer && closeMobileNav) {
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('translate-x-full');
+        });
+        closeMobileNav.addEventListener('click', () => {
+            mobileDrawer.classList.add('translate-x-full');
         });
     }
 });
