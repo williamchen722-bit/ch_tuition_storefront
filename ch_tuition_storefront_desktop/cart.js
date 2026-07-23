@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let migrated = false;
     cart = cart.map(item => {
         if (item.id === 'prep-pack') {
-            if (!item.originalPrice || item.originalPrice !== 39.99) {
-                item.originalPrice = 39.99;
+            if (!item.originalPrice || item.originalPrice !== 79.00) {
+                item.originalPrice = 79.00;
                 migrated = true;
             }
         } else if (item.id === 'bonus-mini-pack') {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h4 class="font-body-md text-primary font-semibold line-clamp-2">${item.name}</h4>
                                 <div class="flex items-baseline gap-2 mt-1">
                                     <p class="font-body-md text-error font-bold">${formatPrice(item.price)}</p>
-                                    ${(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : (item.id === 'bonus-mini-pack' ? 19.99 : null))) ? `<p class="font-body-sm text-on-surface-variant line-through">${formatPrice(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : 19.99))}</p>` : ''}
+                                    ${(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 79.00 : (item.id === 'bonus-mini-pack' ? 19.99 : null))) ? `<p class="font-body-sm text-on-surface-variant line-through">${formatPrice(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 79.00 : 19.99))}</p>` : ''}
                                 </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalTotalEl = document.getElementById('cart-original-total');
             if (originalTotalEl) {
                 const originalTotal = cart.reduce((total, item) => {
-                    const origPrice = item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : item.price);
+                    const origPrice = item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 79.00 : item.price);
                     return total + (origPrice * item.quantity);
                 }, 0);
                 
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
-                window.location.href = 'https://buy.stripe.com/7sYbJ13pocVNa8wfd7cMM03';
+                window.location.href = 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04';
             }
         });
     }
