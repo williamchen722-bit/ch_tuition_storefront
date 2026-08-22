@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
-                window.location.href = 'https://buy.stripe.com/8x214n5xw1d54Oc3upcMM05';
+                window.location.href = 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04';
             }
         });
     }
