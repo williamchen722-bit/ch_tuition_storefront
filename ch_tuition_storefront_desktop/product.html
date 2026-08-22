@@ -1846,6 +1846,22 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Modal Content Body -->
         <div class="p-6">
             <form id="discount-form" onsubmit="handleDiscountSubmit(event)" class="space-y-4">
+                <div class="flex gap-4">
+                    <div class="w-1/2">
+                        <label for="discount-firstname" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">First Name</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
+                            <input type="text" id="discount-firstname" required placeholder="Jane" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <label for="discount-lastname" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">Last Name</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
+                            <input type="text" id="discount-lastname" required placeholder="Doe" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <label for="discount-email" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">Email Address</label>
                     <div class="relative">
@@ -1916,9 +1932,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleDiscountSubmit(e) {
         e.preventDefault();
         const emailInput = document.getElementById('discount-email');
-        if (emailInput && emailInput.value) {
+        const firstNameInput = document.getElementById('discount-firstname');
+        const lastNameInput = document.getElementById('discount-lastname');
+        if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
             if (window.posthog) {
-                window.posthog.capture('discount_code_claimed', { email: emailInput.value });
+                window.posthog.capture('discount_code_claimed', { 
+                    email: emailInput.value,
+                    firstName: firstNameInput.value,
+                    lastName: lastNameInput.value
+                });
             }
             if (window.fbq) {
                 window.fbq('track', 'Lead', { content_name: '$25 Discount Claimed' });
