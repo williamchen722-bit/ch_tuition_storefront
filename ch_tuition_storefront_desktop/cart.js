@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div>
                                 <h4 class="font-body-md text-primary font-semibold line-clamp-2">${item.name}</h4>
                                 <div class="flex items-baseline gap-2 mt-1">
-                                    <p class="font-body-md text-error font-bold">${formatPrice(item.price)}</p>
+                                    <p class="font-body-md text-primary font-bold">${formatPrice(item.price)}</p>
                                     ${(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : (item.id === 'bonus-mini-pack' ? 19.99 : null))) ? `<p class="font-body-sm text-on-surface-variant line-through">${formatPrice(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : 19.99))}</p>` : ''}
                                 </div>
                             </div>
