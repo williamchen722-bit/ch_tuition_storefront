@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.image = 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg';
                 migrated = true;
             }
+        } else if (item.id === 'bonus-prep-lab') {
+            if (!item.originalPrice || item.originalPrice !== 99.99) {
+                item.originalPrice = 99.99;
+                migrated = true;
+            }
+            if (item.image !== 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg') {
+                item.image = 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg';
+                migrated = true;
+            }
         }
         return item;
     });
@@ -190,6 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         price: 0,
                         originalPrice: 19.99,
                         image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg',
+                        quantity: 1
+                    });
+                }
+                const bonus2Exists = cart.find(item => item.id === 'bonus-prep-lab');
+                if (!bonus2Exists) {
+                    cart.push({
+                        id: 'bonus-prep-lab',
+                        name: 'CH Prep Lab Subscription (1 Year)',
+                        price: 0,
+                        originalPrice: 99.99,
+                        image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg',
                         quantity: 1
                     });
                 }
