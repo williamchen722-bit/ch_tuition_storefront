@@ -228,29 +228,45 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <!-- LEFT COLUMN: Image Gallery -->
 <div class="md:col-span-6 flex flex-col gap-4">
 <!-- Main Preview -->
-<div class="relative w-full aspect-[4/3] bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden" id="main-preview-container">
-<img id="main-preview-img" alt="CHPrepLab Platform" class="w-full h-full object-cover transition-all duration-300 rounded-lg" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg">
+<div class="relative w-full aspect-[4/3] bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden group cursor-zoom-in" id="main-preview-container">
+<img id="main-preview-img" alt="CHPrepLab Platform" class="w-full h-full object-cover transition-all duration-300" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg">
+<!-- Navigation Arrows -->
+<div class="absolute inset-0 flex items-center justify-between px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<button id="prev-btn" aria-label="Previous image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button id="next-btn" aria-label="Next image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Thumbnail Strip -->
+<div class="grid grid-cols-5 gap-2" id="thumbnail-strip">
+<div class="thumbnail-item aspect-square bg-surface-container-low border-2 border-secondary rounded overflow-hidden cursor-pointer" data-large="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg">
+<img loading="lazy" alt="CHPrepLab Overview" class="w-full h-full object-cover" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg">
+</div>
+<div class="thumbnail-item aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100" data-large="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951352/c502bee9-86a8-4bfe-a954-4c41afdbb280.png">
+<img loading="lazy" alt="Platform Screenshot 1" class="w-full h-full object-cover" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951352/c502bee9-86a8-4bfe-a954-4c41afdbb280.png">
+</div>
+<div class="thumbnail-item aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100" data-large="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951618/419d413a-521b-4ee0-a5d2-abd51a02c875.png">
+<img loading="lazy" alt="Platform Screenshot 2" class="w-full h-full object-cover" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951618/419d413a-521b-4ee0-a5d2-abd51a02c875.png">
+</div>
+<div class="thumbnail-item aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100" data-large="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951775/5e019cd3-43fa-460c-941d-aa15b6127bbe.png">
+<img loading="lazy" alt="Platform Screenshot 3" class="w-full h-full object-cover" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951775/5e019cd3-43fa-460c-941d-aa15b6127bbe.png">
+</div>
+<div class="thumbnail-item aspect-square bg-surface-container-low border border-outline-variant rounded overflow-hidden cursor-pointer hover:border-outline transition-colors opacity-70 hover:opacity-100" data-large="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783952647/61725191-0a75-4c7e-a453-a34f4192269e.png">
+<img loading="lazy" alt="Platform Screenshot 4" class="w-full h-full object-cover" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783952647/61725191-0a75-4c7e-a453-a34f4192269e.png">
+</div>
 </div>
 </div>
 <!-- RIGHT COLUMN: Product Details & Conversion -->
 <div class="md:col-span-6 flex flex-col pt-4 md:pl-8">
-<!-- Row 1: Rating -->
-<div class="flex items-center gap-2 mb-4">
-<div class="flex text-secondary">
-<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
-<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
-<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
-<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
-<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
-</div>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">4.9/5 Rating | From 500+ Verified Parents</span>
-</div>
+
 <!-- Row 2: Headline -->
 <h1 class="font-headline-lg text-headline-lg text-primary mb-6">CHPrepLab Subscription (1 Year)</h1>
 <!-- Row 3: Pricing -->
 <div class="flex items-baseline gap-3 mb-6">
 <span class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight">$99.99 <span class="font-semibold">AUD</span> / Year</span>
-<span class="font-body-md text-[24px] text-[#74777f] line-through">$149.99 AUD</span>
 </div>
 <!-- Row 4: Bullet Points -->
 <ul class="space-y-3 mb-10">
@@ -278,6 +294,10 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
 <span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions and detailed analytics</span>
 </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">Subject-specific expert tutor consultations</span>
+</li>
 </ul>
 <!-- Row 5: CTA -->
 <button id="add-to-cart-btn" onclick="window.addToCart({id: 'ch-prep-lab-sub', name: 'CHPrepLab Subscription (1 Year)', price: 99.99, originalPrice: 149.99, image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg'})" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-3 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
@@ -291,20 +311,20 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <!-- Row 6: Trust Icons -->
 <div class="flex flex-wrap items-center gap-6 pt-4 border-t border-outline-variant/50">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Instant PDF Download</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="devices">devices</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Access on Any Device</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
 <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">100% Risk-Free Guarantee</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="print">print</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ready to Print</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="support_agent">support_agent</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Expert Tutor Support</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="devices">devices</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Free Online Access <span class="line-through text-outline ml-1">$99.99</span></span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="update">update</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Regular Content Updates</span>
 </div></div>
 </div>
 </section>
@@ -318,47 +338,6 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
                     We stand behind the quality of our resources. If you find our materials do not accurately reflect the current syllabus standards, we offer a full refund within 14 days. (<a href="/terms" class="underline hover:text-white transition-colors">Terms and Conditions Apply</a>)</p>
 </div>
 </section>
-<!-- [ZONE 3: DOUBLE-COLUMN DRILLDOWN (70/30 SPLIT)] -->
-<section class="mb-section-gap relative">
-<!-- LEFT 70%: Content Drilldown -->
-<div class="flex flex-col gap-12">
-<!-- Section A: Deep Dive -->
-<div class="prose max-w-none">
-<h2 class="font-headline-md text-headline-md text-primary border-b border-secondary pb-4 mb-6">Access to CH Prep Lab (Online Selective Testing Environment) <span class="line-through text-outline font-body-md text-[20px] ml-1 align-middle">$99.99</span> <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold ml-2">FREE BONUS</span></h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Transform your practice with our interactive testing environment. Simply enter your unique purchase code on our platform to unlock timed simulations, instant feedback, and detailed performance analytics that mirror the actual exam experience. (Included for free with every paper purchase).</p>
-
-<!-- Platform Carousel -->
-<div class="relative w-full group mt-8 mb-8" id="testing-platform-carousel-container">
-    <style>
-        #testing-platform-carousel::-webkit-scrollbar { display: none; }
-    </style>
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-2" id="testing-platform-carousel" style="scrollbar-width: none; -ms-overflow-style: none;">
-        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
-            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951352/c502bee9-86a8-4bfe-a954-4c41afdbb280.png" alt="Platform Screenshot 1" class="w-full h-auto object-cover">
-        </div>
-        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
-            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951618/419d413a-521b-4ee0-a5d2-abd51a02c875.png" alt="Platform Screenshot 2" class="w-full h-auto object-cover">
-        </div>
-        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
-            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951775/5e019cd3-43fa-460c-941d-aa15b6127bbe.png" alt="Platform Screenshot 3" class="w-full h-auto object-cover">
-        </div>
-        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
-            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783952647/61725191-0a75-4c7e-a453-a34f4192269e.png" alt="Platform Screenshot 4" class="w-full h-auto object-cover">
-        </div>
-        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
-            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951821/65b9894f-0c83-408d-8bb7-73a7e4fba651.png" alt="Platform Screenshot 5" class="w-full h-auto object-cover">
-        </div>
-    </div>
-    
-    <!-- Arrows -->
-    <button onclick="document.getElementById('testing-platform-carousel').scrollBy({left: -400, behavior: 'smooth'})" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-surface/95 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-lg hover:border-secondary hover:text-secondary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 hidden md:flex" aria-label="Previous">
-        <span class="material-symbols-outlined" style="font-size: 24px;">chevron_left</span>
-    </button>
-    <button onclick="document.getElementById('testing-platform-carousel').scrollBy({left: 400, behavior: 'smooth'})" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-surface/95 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-lg hover:border-secondary hover:text-secondary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 hidden md:flex" aria-label="Next">
-        <span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
-    </button>
-</div>
-</div></div>
 <div class="mt-8">
     <h2 class="font-headline-md text-headline-md text-primary border-b border-secondary pb-4 mb-6">Real Results, Proven Success</h2>
     <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Hear from parents who have transformed their child's preparation.</p>
