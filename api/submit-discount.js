@@ -12,7 +12,12 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.N8N_WEBHOOK_SECRET}`
       },
-      body: JSON.stringify({ email, firstName, lastName })
+      body: JSON.stringify({
+        email,
+        first_name: firstName,
+        last_name: lastName,
+        fullName: `${firstName} ${lastName}`.trim()
+      })
     });
 
     if (!response.ok) {
