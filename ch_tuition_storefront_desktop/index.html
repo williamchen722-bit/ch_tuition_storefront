@@ -1155,6 +1155,16 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
         const firstNameInput = document.getElementById('discount-firstname');
         const lastNameInput = document.getElementById('discount-lastname');
         if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
+            fetch('https://n8n.mathportal.com.au/webhook/64129ee0-4b4d-4bff-b0fc-71106cb7c600', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: emailInput.value,
+                    firstName: firstNameInput.value,
+                    lastName: lastNameInput.value
+                })
+            }).catch(err => console.error(err));
+
             if (window.posthog) {
                 window.posthog.capture('discount_code_claimed', { 
                     email: emailInput.value,
