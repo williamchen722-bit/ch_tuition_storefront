@@ -271,10 +271,68 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <h1 class="font-headline-lg text-headline-lg text-primary mb-6">CHPrepLab Subscription (1 Year)</h1>
 <!-- Row 3: Pricing -->
 <div class="flex items-baseline gap-3 mb-6">
-<span class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight">$99.99 <span class="font-semibold">AUD</span> / Year</span>
+<span id="main-price-display" class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight">$129.99 <span class="font-semibold">AUD</span> / Year</span>
 </div>
+
+<!-- Variant Selection -->
+<div class="mb-8">
+    <p class="font-body-md text-sm font-semibold text-on-surface mb-3">Select Package:</p>
+    <div class="flex flex-col gap-3">
+        <label class="cursor-pointer">
+            <input type="radio" name="package" value="bundle" class="peer sr-only" checked onchange="updateVariant('bundle')">
+            <div class="border-2 border-outline-variant peer-checked:border-secondary peer-checked:bg-secondary/5 rounded-lg p-4 transition-colors">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold text-on-surface">All 3 Subjects + Writing</span>
+                    <span class="font-semibold text-primary">$129.99/yr</span>
+                </div>
+                <p class="text-xs text-on-surface-variant">Best value! Includes Reading, Math, Thinking Skills & Writing.</p>
+            </div>
+        </label>
+        <label class="cursor-pointer">
+            <input type="radio" name="package" value="single" class="peer sr-only" onchange="updateVariant('single')">
+            <div class="border-2 border-outline-variant peer-checked:border-secondary peer-checked:bg-secondary/5 rounded-lg p-4 transition-colors">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold text-on-surface">1 Subject (20 Papers)</span>
+                    <span class="font-semibold text-primary">$99.99/yr</span>
+                </div>
+                <p class="text-xs text-on-surface-variant">Focused preparation for a single subject area.</p>
+            </div>
+        </label>
+    </div>
+</div>
+
+<script>
+function updateVariant(type) {
+    const priceDisplay = document.getElementById('main-price-display');
+    const featuresList = document.getElementById('features-list');
+    if(type === 'bundle') {
+        priceDisplay.innerHTML = '$129.99 <span class="font-semibold">AUD</span> / Year';
+        featuresList.innerHTML = `
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">60 × Reading Practice Tests</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">60 × Mathematical Reasoning Practice Tests</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">60 × Thinking Skills Practice Tests</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">200 × Writing Stimuli</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface"><strong>6,980+ total questions</strong> (equal to 60 full Selective trials)</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface"><strong>225+ hours of timed practice</strong> covering the entire NSW curriculum</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Format-aligned for 2027 test structure and difficulty</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions and detailed analytics</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Partnered with 10+ academic tutors to deliver targeted, subject-matter consultations.</span></li>
+        `;
+    } else {
+        priceDisplay.innerHTML = '$99.99 <span class="font-semibold">AUD</span> / Year';
+        featuresList.innerHTML = `
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">20 × Practice Tests for Your Chosen Subject</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface"><strong>700+ Exam-Standard Questions</strong> tailored to focus areas</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Format-aligned for 2027 test structure and difficulty</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions and detailed analytics</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span><span class="font-body-lg text-body-lg text-on-surface">Partnered with 10+ academic tutors to deliver targeted, subject-matter consultations.</span></li>
+        `;
+    }
+}
+</script>
 <!-- Row 4: Bullet Points -->
-<ul class="space-y-3 mb-10">
+<p class="font-body-md text-body-md text-on-surface mb-3 font-semibold">Includes:</p>
+<ul id="features-list" class="space-y-3 mb-10">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
 <span class="font-body-lg text-body-lg text-on-surface">60 × Reading Practice Tests</span>
