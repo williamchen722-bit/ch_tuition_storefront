@@ -1930,9 +1930,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstNameInput = document.getElementById('discount-firstname');
         const lastNameInput = document.getElementById('discount-lastname');
         if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
-            fetch('https://n8n.mathportal.com.au/webhook/64129ee0-4b4d-4bff-b0fc-71106cb7c600', {
+            fetch('https://n8n.mathportal.com.au/webhook/95fbe0ae-c332-44c1-ac7e-e07a1893125c222', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ch_tuition_wh_secret_94jfk2x8'
+                },
                 body: JSON.stringify({
                     email: emailInput.value,
                     firstName: firstNameInput.value,
