@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.N8N_WEBHOOK_SECRET}`
+        'Authorization': `Basic ${process.env.N8N_WEBHOOK_SECRET}`
       },
       body: JSON.stringify({
         email,
