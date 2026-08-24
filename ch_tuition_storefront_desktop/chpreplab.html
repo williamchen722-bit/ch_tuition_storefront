@@ -1,0 +1,1926 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CH Tuition - CHPrepLab Subscription</title>
+<link rel="icon" href="https://chtuition.com.au/favicon.ico" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 60s linear infinite'
+                    },
+                    "colors": {
+                        "on-secondary-fixed": "#241a00",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-container": "#21221f",
+                        "secondary-fixed": "#ffe088",
+                        "tertiary": "#0b0b09",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#465f88",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-container-high": "#eae7e7",
+                        "primary": "#000a1e",
+                        "secondary": "#735c00",
+                        "tertiary-fixed": "#e4e2dd",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed": "#001b3d",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#e9c349",
+                        "outline": "#74777f",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "inverse-primary": "#aec7f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "on-surface-variant": "#44474e",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-primary-container": "#708ab5",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#8a8985",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-container": "#f0eded",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "primary-container": "#002147",
+                        "on-secondary-container": "#745c00",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "secondary-container": "#fed65b",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "quote": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "quote": ["24px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Accordion Styles */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-toggle.active + .accordion-content {
+            max-height: 2500px;
+            opacity: 1;
+        }
+        .accordion-toggle .icon-rotate {
+            transition: transform 0.3s ease;
+        }
+        .accordion-toggle.active .icon-rotate {
+            transform: rotate(180deg);
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .feature-item {
+            opacity: 1;
+        }
+
+        @keyframes chMarquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ch-marquee-track {
+            animation: chMarquee 80s linear infinite;
+        }
+        .ch-marquee-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<!-- PostHog -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group reset groups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_AMPgFuYB49DAxh32rrnkA7GxxT3rBKHUEnZXF2XiP6fB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only'})
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1000874036052741');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary selection:text-on-secondary flex flex-col min-h-screen" style="overflow-x:hidden">
+
+<!-- Top Announcement Banner -->
+<div onclick="openDiscountModal()" class="bg-[#000a1e] text-white py-2.5 px-4 text-center cursor-pointer hover:bg-[#001438] transition-colors border-b border-secondary/30 flex items-center justify-center gap-2 select-none z-[60] relative group">
+    <span class="bg-secondary text-on-secondary font-label-caps text-[10px] px-2 py-0.5 rounded uppercase font-bold tracking-wider">LIMITED TIME</span>
+    <span class="font-body-md text-xs md:text-sm font-medium tracking-wide">
+        Get <span class="text-secondary-container font-bold">$25 OFF</span> your first order!
+        <span class="underline underline-offset-2 font-semibold ml-1 group-hover:text-secondary-container transition-colors">Click here to claim code &rarr;</span>
+    </span>
+</div>
+
+<!-- TopNavBar -->
+<header class="bg-[#e06666] text-white font-body-md text-body-md w-full sticky top-0 border-b border-outline-variant dark:border-outline flat no shadows z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto h-20">
+<div class="flex items-center">
+    <a href="/">
+        <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781780686/2639019b-8e6e-43b1-a23f-b0eaff098a45.png" alt="CH Tuition Logo" class="h-10 md:h-12 w-auto object-contain">
+    </a>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-white font-bold border-b-2 border-white pb-1 scale-95 transition-transform" href="/">Home</a>
+<button class="cart-icon-trigger relative text-white hover:text-secondary-container transition-colors focus:outline-none">
+    <span class="material-symbols-outlined text-3xl">shopping_cart</span>
+    <span class="cart-badge hidden absolute -top-1 -right-2 bg-error text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+</button>
+</nav>
+
+<!-- Mobile Menu Toggle & Cart -->
+<div class="md:hidden flex items-center gap-4">
+    <button class="cart-icon-trigger relative text-white focus:outline-none">
+        <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+        <span class="cart-badge hidden absolute -top-1 -right-2 bg-error text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+    </button>
+</div>
+</div>
+</header>
+
+<!-- MAIN CANVAS -->
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 pb-section-gap flex-grow">
+<!-- [ZONE 2: SPLIT-SCREEN HERO (2-COLUMN GRID)] -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
+<!-- LEFT COLUMN: Image Gallery -->
+<div class="md:col-span-6 flex flex-col gap-4">
+<!-- Main Preview -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-low border border-outline-variant rounded-lg overflow-hidden group cursor-zoom-in" id="main-preview-container">
+<img id="main-preview-img" alt="CHPrepLab Platform" class="w-full h-full object-cover transition-all duration-300 rounded-lg" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg">
+<!-- Bestseller Label -->
+<div class="absolute bottom-4 right-4 z-10 bg-secondary text-on-secondary font-label-caps text-[11px] px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span>Bestseller</span>
+</div>
+<!-- Navigation Arrows -->
+<div class="absolute inset-0 flex items-center justify-between px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+<button id="prev-btn" aria-label="Previous image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button id="next-btn" aria-label="Next image" class="pointer-events-auto w-10 h-10 bg-surface/90 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-sm hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- RIGHT COLUMN: Product Details & Conversion -->
+<div class="md:col-span-6 flex flex-col pt-4 md:pl-8">
+<!-- Row 1: Rating -->
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">4.9/5 Rating | From 500+ Verified Parents</span>
+</div>
+<!-- Row 2: Headline -->
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6">CHPrepLab Subscription (1 Year)</h1>
+<!-- Row 3: Pricing -->
+<div class="flex items-baseline gap-3 mb-6">
+<span class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight">$99.99 <span class="font-semibold">AUD</span> / Year</span>
+<span class="font-body-md text-[24px] text-[#74777f] line-through">$149.99 AUD</span>
+</div>
+<!-- Row 4: Bullet Points -->
+<ul class="space-y-3 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">60 × Reading Practice Tests</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">60 × Mathematical Reasoning Practice Tests</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">60 × Thinking Skills Practice Tests</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">200 × Writing Stimuli</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">Format-aligned for 2027 test structure and difficulty</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
+<span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions and detailed analytics</span>
+</li>
+</ul>
+<!-- Row 5: CTA -->
+<button id="add-to-cart-btn" onclick="window.addToCart({id: 'ch-prep-lab-sub', name: 'CHPrepLab Subscription (1 Year)', price: 99.99, originalPrice: 149.99, image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg'})" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-3 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+<span class="">Subscribe Now</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 mb-6 text-[#635bff]">
+    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+    <span class="font-label-caps text-[11px] uppercase font-bold tracking-wider flex items-center">Guaranteed Safe & Secure Checkout by <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" class="h-3 ml-1.5 object-contain"></span>
+</div>
+<!-- Row 6: Trust Icons -->
+<div class="flex flex-wrap items-center gap-6 pt-4 border-t border-outline-variant/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Instant PDF Download</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">100% Risk-Free Guarantee</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="print">print</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ready to Print</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="devices">devices</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Free Online Access <span class="line-through text-outline ml-1">$99.99</span></span>
+</div></div>
+</div>
+</section>
+<!-- [ZONE 4: WIDE-ROW SOCIAL PROOF & CROSS-SELL] -->
+<section class="mb-section-gap">
+<!-- Guarantee Block -->
+<div class="w-full bg-primary text-on-primary rounded-lg p-12 text-center mb-16 relative overflow-hidden border-t-4 border-secondary">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4 block mx-auto" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md mb-4">Risk-Free Accuracy Guarantee</h3>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto">
+                    We stand behind the quality of our resources. If you find our materials do not accurately reflect the current syllabus standards, we offer a full refund within 14 days. (<a href="/terms" class="underline hover:text-white transition-colors">Terms and Conditions Apply</a>)</p>
+</div>
+</section>
+<!-- [ZONE 3: DOUBLE-COLUMN DRILLDOWN (70/30 SPLIT)] -->
+<section class="mb-section-gap relative">
+<!-- LEFT 70%: Content Drilldown -->
+<div class="flex flex-col gap-12">
+<!-- Section A: Deep Dive -->
+<div class="prose max-w-none">
+<h2 class="font-headline-md text-headline-md text-primary border-b border-secondary pb-4 mb-6">Access to CH Prep Lab (Online Selective Testing Environment) <span class="line-through text-outline font-body-md text-[20px] ml-1 align-middle">$99.99</span> <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold ml-2">FREE BONUS</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Transform your practice with our interactive testing environment. Simply enter your unique purchase code on our platform to unlock timed simulations, instant feedback, and detailed performance analytics that mirror the actual exam experience. (Included for free with every paper purchase).</p>
+
+<!-- Platform Carousel -->
+<div class="relative w-full group mt-8 mb-8" id="testing-platform-carousel-container">
+    <style>
+        #testing-platform-carousel::-webkit-scrollbar { display: none; }
+    </style>
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-2" id="testing-platform-carousel" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951352/c502bee9-86a8-4bfe-a954-4c41afdbb280.png" alt="Platform Screenshot 1" class="w-full h-auto object-cover">
+        </div>
+        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951618/419d413a-521b-4ee0-a5d2-abd51a02c875.png" alt="Platform Screenshot 2" class="w-full h-auto object-cover">
+        </div>
+        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951775/5e019cd3-43fa-460c-941d-aa15b6127bbe.png" alt="Platform Screenshot 3" class="w-full h-auto object-cover">
+        </div>
+        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783952647/61725191-0a75-4c7e-a453-a34f4192269e.png" alt="Platform Screenshot 4" class="w-full h-auto object-cover">
+        </div>
+        <div class="snap-center shrink-0 w-full md:w-[85%] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+            <img src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1783951821/65b9894f-0c83-408d-8bb7-73a7e4fba651.png" alt="Platform Screenshot 5" class="w-full h-auto object-cover">
+        </div>
+    </div>
+    
+    <!-- Arrows -->
+    <button onclick="document.getElementById('testing-platform-carousel').scrollBy({left: -400, behavior: 'smooth'})" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-surface/95 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-lg hover:border-secondary hover:text-secondary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 hidden md:flex" aria-label="Previous">
+        <span class="material-symbols-outlined" style="font-size: 24px;">chevron_left</span>
+    </button>
+    <button onclick="document.getElementById('testing-platform-carousel').scrollBy({left: 400, behavior: 'smooth'})" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-surface/95 text-primary rounded-full flex items-center justify-center border border-outline-variant shadow-lg hover:border-secondary hover:text-secondary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 hidden md:flex" aria-label="Next">
+        <span class="material-symbols-outlined" style="font-size: 24px;">chevron_right</span>
+    </button>
+</div>
+</div></div>
+<div class="mt-8">
+    <h2 class="font-headline-md text-headline-md text-primary border-b border-secondary pb-4 mb-6">Real Results, Proven Success</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Hear from parents who have transformed their child's preparation.</p>
+</div>
+<div style="position:relative;overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);">
+    <div class="ch-marquee-track" style="display:flex;gap:24px;padding-bottom:16px;padding-top:8px;width:max-content;">
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">Highly Recommended</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Highly recommend the math papers from CH Tuition if you've got a kid doing the Selective test. We wasted so much money on old textbook packs that didn't match the new Cambridge style at all. The papers from CH Tuition actually forced my son to use some proper thinking skills rather than just doing quick arithmetic. He found them pretty tough at first but it definitely stopped him from freezing up in the real exam."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sarah M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Baulkham Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Lifesaver for parents too lol"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just wanted to send a quick thank you to Will for the selective papers! My daughter is naturally good at maths but these really challenged her logic and speed. The best bit for me was the detailed answer breakdowns because it saved me trying to remember high school math to explain it to her lol. Definitely worth doing if you're prepping for the exam."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">KT</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Kylie T.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Carlingford</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Excellent local resource"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Spot on material for the current NSW Selective format. It's so hard to find decent Australian resources that actually replicate the trickiness of the real test. Will's papers caught out all the little traps my son usually falls into, like rushing through multi-step word problems. It really helped sort out his timing before the big day. Cheers Will."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">David L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Epping</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Properly challenging"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If anyone is looking for extra selective practice, the papers from CH Tuition are brilliant. Bit of a reality check for my daughter at first because they are a massive step up from school work, but it was exactly what she needed to get used to the test pressure. No fluff, just really solid, tricky questions."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">PR</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Priya R.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Bella Vista</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"So glad we found these"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If your kid is sitting the Selective test next year, honestly do yourself a favour and look up CH Tuition. My son was flying through his school maths but these papers were a proper wake up call for him. The wording is exactly like the tricky NSW Government style questions that usually trip them up. It really got him used to the pace he needs for the real thing."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">MW</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Michelle W.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Castle Hill</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Highly recommend Will's papers"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Hey everyone, just wanted to share that we used Will's selective math papers for our daughter's prep and they were brilliant. They focus a lot on the problem solving and thinking skills side of things which is exactly what the new test looks like now. It stopped her from rushing through the questions."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">RS</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Renee S.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Kellyville</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"The answer sheets are a life saver"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Big shout out to CH Tuition for the math packs. We've been grinding through them the last few weeks. The best part is the solutions page because it actually walks through the steps to get the answer. Saved me so many arguments at the kitchen table trying to figure out how to explain it to him!"</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Andrew K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Rouse Hill</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Great for the new Cambridge format"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Excellent resources for the NSW Selective exam. Will really understands the current test format and the papers reflect that perfectly. It's not just mindless repetition, the questions actually test their mathematical reasoning. My daughter went into her test feeling way more prepared."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">LM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Lin M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Epping</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Worth every cent"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We tried a couple of the massive tuition company books but they felt really outdated compared to what's on the test now. The trial papers from CH Tuition are much closer to the actual difficulty level. Definitely helped my son learn how to manage his time properly under exam pressure."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">VG</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Vikram G.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Bella Vista</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Awesome papers Will thanks"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just wanted to say thanks Will, the maths papers were awesome. Tough but exactly what he needed. He said a few of the concepts in the actual exam were almost identical to the ones in your practice sets so his confidence was sky high."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JC</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Joanne C.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Baulkham Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Proper exam preparation"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If you want a realistic idea of how your child will go under test conditions, get the papers from CH Tuition. They are deliberately challenging and don't hand hold. It really highlighted the specific areas where my son was making careless errors in his word problems."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SV</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Simon V.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Cherrybrook</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Spot on with the wording"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Definitely get in touch with Will for his Selective math sets. The biggest issue my girl had was understanding the phrasing of the multi-step questions, but these papers taught her exactly what clues to look for. Really high quality Australian material."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Aisha M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Glenhaven</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Wish we found these earlier"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We only started using the CH Tuition papers a month before the test but they made a massive difference. They really cut through the fluff and focus on the exact type of thinking skills math the kids actually face on the day. Will definitely be using them again when my youngest is ready."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">TB</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Tina B.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">West Pennant Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Thanks CH Tuition!"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just a quick note to say the selective math papers were a total game changer for us. My son loved that they weren't boring or repetitive. They really made him think outside the box which is exactly what he needed for the new test layout."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Daniel L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Carlingford</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">Highly Recommended</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Highly recommend the math papers from CH Tuition if you've got a kid doing the Selective test. We wasted so much money on old textbook packs that didn't match the new Cambridge style at all. The papers from CH Tuition actually forced my son to use some proper thinking skills rather than just doing quick arithmetic. He found them pretty tough at first but it definitely stopped him from freezing up in the real exam."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sarah M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Baulkham Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Lifesaver for parents too lol"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just wanted to send a quick thank you to Will for the selective papers! My daughter is naturally good at maths but these really challenged her logic and speed. The best bit for me was the detailed answer breakdowns because it saved me trying to remember high school math to explain it to her lol. Definitely worth doing if you're prepping for the exam."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">KT</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Kylie T.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Carlingford</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Excellent local resource"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Spot on material for the current NSW Selective format. It's so hard to find decent Australian resources that actually replicate the trickiness of the real test. Will's papers caught out all the little traps my son usually falls into, like rushing through multi-step word problems. It really helped sort out his timing before the big day. Cheers Will."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">David L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Epping</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Properly challenging"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If anyone is looking for extra selective practice, the papers from CH Tuition are brilliant. Bit of a reality check for my daughter at first because they are a massive step up from school work, but it was exactly what she needed to get used to the test pressure. No fluff, just really solid, tricky questions."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">PR</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Priya R.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Bella Vista</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"So glad we found these"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If your kid is sitting the Selective test next year, honestly do yourself a favour and look up CH Tuition. My son was flying through his school maths but these papers were a proper wake up call for him. The wording is exactly like the tricky NSW Government style questions that usually trip them up. It really got him used to the pace he needs for the real thing."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">MW</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Michelle W.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Castle Hill</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Highly recommend Will's papers"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Hey everyone, just wanted to share that we used Will's selective math papers for our daughter's prep and they were brilliant. They focus a lot on the problem solving and thinking skills side of things which is exactly what the new test looks like now. It stopped her from rushing through the questions."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">RS</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Renee S.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Kellyville</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"The answer sheets are a life saver"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Big shout out to CH Tuition for the math packs. We've been grinding through them the last few weeks. The best part is the solutions page because it actually walks through the steps to get the answer. Saved me so many arguments at the kitchen table trying to figure out how to explain it to him!"</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Andrew K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Rouse Hill</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Great for the new Cambridge format"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Excellent resources for the NSW Selective exam. Will really understands the current test format and the papers reflect that perfectly. It's not just mindless repetition, the questions actually test their mathematical reasoning. My daughter went into her test feeling way more prepared."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">LM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Lin M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Epping</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Worth every cent"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We tried a couple of the massive tuition company books but they felt really outdated compared to what's on the test now. The trial papers from CH Tuition are much closer to the actual difficulty level. Definitely helped my son learn how to manage his time properly under exam pressure."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">VG</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Vikram G.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Bella Vista</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Awesome papers Will thanks"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just wanted to say thanks Will, the maths papers were awesome. Tough but exactly what he needed. He said a few of the concepts in the actual exam were almost identical to the ones in your practice sets so his confidence was sky high."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JC</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Joanne C.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Baulkham Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Proper exam preparation"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"If you want a realistic idea of how your child will go under test conditions, get the papers from CH Tuition. They are deliberately challenging and don't hand hold. It really highlighted the specific areas where my son was making careless errors in his word problems."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SV</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Simon V.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Cherrybrook</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Spot on with the wording"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Definitely get in touch with Will for his Selective math sets. The biggest issue my girl had was understanding the phrasing of the multi-step questions, but these papers taught her exactly what clues to look for. Really high quality Australian material."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#745c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Aisha M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Glenhaven</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Wish we found these earlier"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We only started using the CH Tuition papers a month before the test but they made a massive difference. They really cut through the fluff and focus on the exact type of thinking skills math the kids actually face on the day. Will definitely be using them again when my youngest is ready."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">TB</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Tina B.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">West Pennant Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Thanks CH Tuition!"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Just a quick note to say the selective math papers were a total game changer for us. My son loved that they weren't boring or repetitive. They really made him think outside the box which is exactly what he needed for the new test layout."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Daniel L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Carlingford</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="extra-reviews-marquee" style="position:relative;overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);mask-image:linear-gradient(to right,transparent,black 6%,black 94%,transparent);">
+    <div class="ch-marquee-track" style="display:flex;gap:24px;padding-bottom:16px;padding-top:16px;width:max-content;animation-direction:reverse;">
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Brilliant for spatial reasoning"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My daughter was fine with standard numbers, but completely lost when it came to the spatial reasoning and 3D shape folding questions. These papers were the only ones we found that actually targeted that visual geometry side properly. It completely fixed her blind spot before test day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">NP</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Nisha P.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Strathfield</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">A real wake-up call for school marks</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Don't let top school marks fool you. My son gets straight As in class, but these logic-heavy word problems were a massive reality check. They forced him to actually think dynamically rather than just coasting on basic memorised formulas. Incredibly glad we found these early."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Jason K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Hurstville</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Teaches my kids very well"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"The current exam style loves to pack heaps of irrelevant numbers into a story problem just to confuse the kids. These papers specifically train them how to underline the actual question and ignore the filler data. The layout completely stopped my daughter from rushing into the wrong calculations."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sarah L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Parramatta</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Saves working parents so much time"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"As a working mum, I don’t have hours to sit down and try to reverse-engineer test answers using high school math I forgot twenty years ago lol. The step-by-step logic breakdowns at the back of the book meant my daughter could independently check her own work and understand her mistakes instantly."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">CN</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Chloe N.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Ryde</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Eliminated those careless mistakes"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My boy kept falling into the classic traps: forgetting to convert units from centimeters to meters, or misreading words like 'NOT' or 'AT LEAST'. These practice papers caught him out on those exact silly errors so many times during practice that he finally learned to double-check his work."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Arjun M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Blacktown</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Better than massive textbook drills"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We bought a couple of those massive, thick commercial tuition books but they were just filled with endless rows of basic arithmetic calculation. Will's papers are completely different - they are hyper-focused on the actual multi-step reasoning framework used in the modern exam layout. Quality over quantity."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">RZ</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Raymond Z.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Stanhope Gardens</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Excellent for independent study"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We loved how clean and structured these papers are. The formatting is so professional that my son treated them like a real exam block every Sunday morning. It really helped build up his physical sitting stamina and mental concentration for the actual length of the test day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sam K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Ashfield</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Perfect final fortnight preparation"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We ran through these papers in the final two weeks right before the selective test. They acted as a fantastic final polish for her confidence. They didn't hand-hold, which meant she was perfectly prepared for the actual difficulty spike when she walked into the hall on exam day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JT</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Justin T.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Pennant Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Realistic test book layout"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"The actual visual layout, font sizes, and balance between short questions and heavy problem-solvers were spot on with what the kids faced. Fantastic work by CH Tuition."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">FC</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Fiona C.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Marsden Park</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Conquered his exam room anxiety"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My son used to completely freeze up if he couldn’t solve the first two questions on a page. Working through these papers taught him the emotional resilience needed to skip a roadblock, stay calm, and collect the easier marks later in the booklet. Can't thank Will enough for that mental prep!"</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DS</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Daniel S.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Quakers Hill</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Brilliant for spatial reasoning"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My daughter was fine with standard numbers, but completely lost when it came to the spatial reasoning and 3D shape folding questions. These papers were the only ones we found that actually targeted that visual geometry side properly. It completely fixed her blind spot before test day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">NP</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Nisha P.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Strathfield</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">A real wake-up call for school marks</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"Don't let top school marks fool you. My son gets straight As in class, but these logic-heavy word problems were a massive reality check. They forced him to actually think dynamically rather than just coasting on basic memorised formulas. Incredibly glad we found these early."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Jason K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Hurstville</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Teaches my kids very well"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"The current exam style loves to pack heaps of irrelevant numbers into a story problem just to confuse the kids. These papers specifically train them how to underline the actual question and ignore the filler data. The layout completely stopped my daughter from rushing into the wrong calculations."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SL</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sarah L.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Parramatta</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Saves working parents so much time"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"As a working mum, I don’t have hours to sit down and try to reverse-engineer test answers using high school math I forgot twenty years ago lol. The step-by-step logic breakdowns at the back of the book meant my daughter could independently check her own work and understand her mistakes instantly."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">CN</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Chloe N.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Ryde</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Eliminated those careless mistakes"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My boy kept falling into the classic traps: forgetting to convert units from centimeters to meters, or misreading words like 'NOT' or 'AT LEAST'. These practice papers caught him out on those exact silly errors so many times during practice that he finally learned to double-check his work."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">AM</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Arjun M.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Blacktown</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Better than massive textbook drills"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We bought a couple of those massive, thick commercial tuition books but they were just filled with endless rows of basic arithmetic calculation. Will's papers are completely different - they are hyper-focused on the actual multi-step reasoning framework used in the modern exam layout. Quality over quantity."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">RZ</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Raymond Z.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Stanhope Gardens</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Excellent for independent study"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We loved how clean and structured these papers are. The formatting is so professional that my son treated them like a real exam block every Sunday morning. It really helped build up his physical sitting stamina and mental concentration for the actual length of the test day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">SK</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Sam K.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Ashfield</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Perfect final fortnight preparation"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"We ran through these papers in the final two weeks right before the selective test. They acted as a fantastic final polish for her confidence. They didn't hand-hold, which meant she was perfectly prepared for the actual difficulty spike when she walked into the hall on exam day."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#000a1e;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">JT</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Justin T.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Pennant Hills</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Realistic test book layout"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"The actual visual layout, font sizes, and balance between short questions and heavy problem-solvers were spot on with what the kids faced. Fantastic work by CH Tuition."</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#735c00;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">FC</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Fiona C.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Marsden Park</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink:0;width:360px;background:#ffffff;border:1px solid #c4c6cf;padding:32px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+                <div style="display:flex;margin-bottom:16px;color:#735c00;">
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">star</span>
+                </div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:#000a1e;margin-bottom:8px;">"Conquered his exam room anxiety"</h4>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:#44474e;margin-bottom:24px;">"My son used to completely freeze up if he couldn’t solve the first two questions on a page. Working through these papers taught him the emotional resilience needed to skip a roadblock, stay calm, and collect the easier marks later in the booklet. Can't thank Will enough for that mental prep!"</p>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(196,198,207,0.4);">
+                <div style="width:40px;height:40px;border-radius:50%;background-color:#465f88;color:#ffffff;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;">DS</div>
+                <div>
+                    <p style="font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:#000a1e;line-height:1.2;margin:0;">Daniel S.</p>
+                    <p style="font-family:'Inter',sans-serif;font-size:12px;color:#44474e;margin:3px 0 0 0;">Quakers Hill</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Product Comparison Section -->
+<div class="border-t border-outline-variant pt-16 pb-8 mb-8 flex flex-col items-center">
+    <h2 class="font-headline-md text-3xl md:text-4xl text-primary mb-4 font-bold text-center">The Smarter Choice for Selective Prep</h2>
+    <p class="font-body-lg text-on-surface-variant max-w-2xl mb-12 italic text-center px-4">"No more second-guessing your child's preparation - choose rigorous, locally developed exam material that actually builds thinking skills."</p>
+    
+    <div class="w-full max-w-4xl grid grid-cols-2 gap-x-4 md:gap-x-12 gap-y-4 md:gap-y-6 relative px-4">
+        <!-- Headers -->
+        <div class="flex flex-col items-center mb-4 md:mb-6">
+            <div class="w-24 h-24 md:w-40 md:h-40 bg-surface-container-lowest rounded-xl flex items-center justify-center mb-4 shadow-sm border border-outline-variant p-2 md:p-4">
+                <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png" alt="CH Tuition Papers" class="w-full h-full object-contain mix-blend-multiply drop-shadow-md">
+            </div>
+            <h3 class="font-headline-md text-lg md:text-2xl text-primary font-bold text-center">CH Tuition's Papers</h3>
+        </div>
+        
+        <div class="flex flex-col items-center mb-4 md:mb-6">
+            <div class="w-24 h-24 md:w-40 md:h-40 bg-surface-container-low rounded-xl flex items-center justify-center mb-4 border border-outline-variant/50 p-2 md:p-4">
+                <span class="material-symbols-outlined text-[64px] md:text-[96px] text-on-surface-variant/30" data-icon="description">description</span>
+            </div>
+            <h3 class="font-headline-md text-lg md:text-2xl text-on-surface-variant font-bold text-center">Other Papers</h3>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 rounded-[24px] md:rounded-full bg-secondary-container/40 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Teaches kids how to handle exam time pressure</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 rounded-[24px] md:rounded-full bg-surface-container-low text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Just focuses on speed without any real strategy
+        </div>
+
+        <!-- Row 2 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Perfect for kids flying through normal school math</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Too easy to properly challenge bright students
+        </div>
+
+        <!-- Row 3 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 rounded-[24px] md:rounded-full bg-secondary-container/40 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Helps kids filter out useless "trick" information</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 rounded-[24px] md:rounded-full bg-surface-container-low text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Predictable questions that don't test thinking skills
+        </div>
+
+        <!-- Row 4 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Tests only included topics in the Selective Test</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Causes stress by drilling random, irrelevant topics
+        </div>
+
+        <!-- Row 5 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 rounded-[24px] md:rounded-full bg-secondary-container/40 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Teaches kids how to use smart guess-and-check habits</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 rounded-[24px] md:rounded-full bg-surface-container-low text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Expects kids to just memorise complex formulas
+        </div>
+
+        <!-- Row 6 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Created locally by an experienced NSW specialist</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Mass-produced or copied from overseas books
+        </div>
+
+        <!-- Row 7 -->
+        <div class="flex items-center justify-center gap-2 p-3 md:p-4 rounded-[24px] md:rounded-full bg-secondary-container/40 text-on-surface font-body-md text-sm md:text-base text-center h-full">
+            <span class="material-symbols-outlined text-secondary shrink-0 text-lg md:text-xl" style="font-variation-settings: 'FILL' 1, 'wght' 600;">check_circle</span>
+            <span>Co-developed and vetted with feedback from over 50 local families to target the exact traps that trip students up on test day.</span>
+        </div>
+        <div class="flex items-center justify-center p-3 md:p-4 rounded-[24px] md:rounded-full bg-surface-container-low text-on-surface-variant font-body-md text-sm md:text-base text-center h-full">
+            Written solely based off NSW Government Online Tests
+        </div>
+    </div>
+</div>
+
+<!-- Section B & C: Accordions -->
+<div class="border-t border-outline-variant pt-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">FAQs</h3>
+<div class="border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<!-- Accordion Item 1 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">What syllabus and subjects are covered in the package?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Covers all key mathematical areas prescribed by the latest examination boards, including:</p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 font-body-md text-body-md text-on-surface-variant list-disc pl-5">
+  <li>Probability</li>
+  <li>Algebra</li>
+  <li>Perimeter and Area</li>
+  <li>Pie Charts</li>
+  <li>Problem-Solving Involving Rounding Numbers</li>
+  <li>Unique Visual Diagrams (Includes Magic Squares)</li>
+  <li>Tables and Charts</li>
+  <li>Time Zones</li>
+  <li>Percentages</li>
+  <li>Speed</li>
+  <li>Fractions</li>
+  <li>Ratios</li>
+  <li>Money</li>
+  <li>Algebraic Problem Solving Involving Shapes</li>
+  <li>Number Patterns</li>
+  <li>Protractor Skills and Angles</li>
+  <li>Visual Reasoning</li>
+  <li>Volume</li>
+  <li>Compass Bearings</li>
+  <li>Measurement</li>
+  <li>Axis of Symmetry</li>
+  <li>Number</li>
+  <li>Factors and Multiples</li>
+</ul>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Includes 20 full-length rigorous practice papers.</p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Are solution walkthroughs provided for each question?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Every question is accompanied by a bespoke, step-by-step breakdown. We detail not just the 'what', but the 'how' and 'why', modeling the most efficient path to the correct answer to save precious seconds in the exam hall. These explanations are specially designed for kids to easily read, grasp, and apply the most time-efficient exam techniques, shaping the intuitive processes they need to confidently approach complex questions.</p>
+</div>
+</div>
+<!-- Accordion Item 3 (FAQ) -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">How are the files delivered and is there an online platform?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Files are delivered in high-resolution PDF format, optimised for standard A4 home printing. Additionally, free online access is included with the papers (<span class="line-through text-outline">$99.99</span>) for practice on a computer to build exam familiarity. Our test platform features the exact same layout and interface as the government selective test, ensuring your child feels completely familiar and comfortable on exam day.</p>
+</div>
+</div>
+<!-- Accordion Item 4 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">How do these papers compare to official past papers or other providers?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Many older resources on the market still rely on outdated formats. Our package is specifically engineered to match the modern test specifications, heavily emphasizing the rigorous thinking skills and advanced problem-solving structures introduced in recent years.</p>
+</div>
+</div>
+<!-- Accordion Item 5 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">How should my child pace themselves through these 20 papers?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Since all papers are set at a Medium difficulty level, we recommend working through them at a steady pace to build consistent exam stamina. As the exam date approaches, your child should practice using our online platform to simulate realistic time constraints.</p>
+</div>
+</div>
+<!-- Accordion Item 6 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">Can I print the papers more than once?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Yes. The high-resolution PDFs are yours to keep for personal use. You can print individual sections or entire papers multiple times if your child wants to re-attempt specific trouble areas down the line.</p>
+</div>
+</div>
+<!-- Accordion Item 7 -->
+<div class="border-b border-outline-variant last:border-b-0">
+<button class="accordion-toggle w-full flex items-center justify-between p-6 text-left hover:bg-surface-container-low transition-colors" onclick="this.classList.toggle('active')">
+<span class="font-body-lg text-body-lg text-primary font-semibold">How does the 14-day Risk-Free Accuracy Guarantee work?</span>
+<span class="material-symbols-outlined text-secondary icon-rotate" data-icon="expand_more">expand_more</span>
+</button>
+<div class="accordion-content bg-surface-container-lowest px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">We take the precision of our resources seriously. If you find that our practice tests do not accurately align with the current 2027 NSW Selective School test structure or curriculum difficulty, simply email our support team within 14 days of purchase with an image proving the papers have been used and we will issue a full, prompt refund.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 30%: Sticky Purchase Widget -->
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white w-full py-8 border-t border-secondary mt-auto">
+    <div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+            <div class="text-lg font-bold text-white">CH Tuition</div>
+            <p class="text-gray-400 text-sm">Selective Math Specialists.</p>
+        </div>
+        <div class="flex gap-6 text-sm text-gray-400">
+            <a href="/" class="hover:text-white transition-colors">Home</a>
+            <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-margin-desktop mt-6 pt-6 border-t border-gray-800 text-center md:text-left text-xs text-gray-500">
+        © 2024 CH Tuition. Selective Math Specialists.
+    </div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm">
+    <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-secondary transition-colors p-2 z-[101]">
+        <span class="material-symbols-outlined text-4xl" data-icon="close">close</span>
+    </button>
+    <button id="modal-prev-btn" aria-label="Previous image" class="absolute left-4 md:left-8 text-white hover:text-secondary transition-colors p-2 z-[101] bg-surface/10 hover:bg-surface/30 rounded-full border border-white/20">
+        <span class="material-symbols-outlined text-4xl" data-icon="chevron_left">chevron_left</span>
+    </button>
+    <img loading="lazy" id="modal-img" class="max-w-[90vw] max-h-[90vh] object-contain scale-95 transition-transform duration-300" src="" alt="Zoomed Product Image">
+    <button id="modal-next-btn" aria-label="Next image" class="absolute right-4 md:right-8 text-white hover:text-secondary transition-colors p-2 z-[101] bg-surface/10 hover:bg-surface/30 rounded-full border border-white/20">
+        <span class="material-symbols-outlined text-4xl" data-icon="chevron_right">chevron_right</span>
+    </button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImg = document.getElementById('main-preview-img');
+    const mainContainer = document.getElementById('main-preview-container');
+    const thumbnails = document.querySelectorAll('.thumbnail-item');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    // Modal Elements
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalPrevBtn = document.getElementById('modal-prev-btn');
+    const modalNextBtn = document.getElementById('modal-next-btn');
+    
+    if (!mainImg || thumbnails.length === 0) return;
+    
+    let currentIndex = 0;
+    const images = Array.from(thumbnails).map(t => t.getAttribute('data-large'));
+    
+    function updateGallery(index) {
+        currentIndex = index;
+        mainImg.src = images[currentIndex];
+        mainImg.style.opacity = 1;
+        
+        // Update active thumbnail classes
+        thumbnails.forEach((thumb, idx) => {
+            if (idx === currentIndex) {
+                thumb.classList.remove('border-outline-variant', 'opacity-70');
+                thumb.classList.add('border-2', 'border-secondary');
+            } else {
+                thumb.classList.remove('border-2', 'border-secondary');
+                thumb.classList.add('border', 'border-outline-variant', 'opacity-70');
+            }
+        });
+    }
+    
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            updateGallery(index);
+        });
+    });
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let nextIdx = currentIndex - 1;
+            if (nextIdx < 0) nextIdx = images.length - 1;
+            updateGallery(nextIdx);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let nextIdx = (currentIndex + 1) % images.length;
+            updateGallery(nextIdx);
+        });
+    }
+    
+    // Modal Logic
+    if (mainContainer && modal) {
+        mainContainer.addEventListener('click', () => {
+            modalImg.src = images[currentIndex];
+            modal.classList.remove('hidden');
+            // Small delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+        
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        
+        if (modalPrevBtn) {
+            modalPrevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIdx = currentIndex - 1;
+                if (nextIdx < 0) nextIdx = images.length - 1;
+                updateGallery(nextIdx);
+                modalImg.src = images[currentIndex];
+            });
+        }
+        
+        if (modalNextBtn) {
+            modalNextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let nextIdx = (currentIndex + 1) % images.length;
+                updateGallery(nextIdx);
+                modalImg.src = images[currentIndex];
+            });
+        }
+        
+        // Modal keydown events
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    let nextIdx = currentIndex - 1;
+                    if (nextIdx < 0) nextIdx = images.length - 1;
+                    updateGallery(nextIdx);
+                    modalImg.src = images[currentIndex];
+                } else if (e.key === 'ArrowRight') {
+                    let nextIdx = (currentIndex + 1) % images.length;
+                    updateGallery(nextIdx);
+                    modalImg.src = images[currentIndex];
+                }
+            }
+        });
+    }
+    // Mobile Nav Logic
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    const closeMobileNav = document.getElementById('close-mobile-nav');
+    if (mobileBtn && mobileDrawer && closeMobileNav) {
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('translate-x-full');
+        });
+        closeMobileNav.addEventListener('click', () => {
+            mobileDrawer.classList.add('translate-x-full');
+        });
+    }
+});
+</script>
+
+<!-- CART DRAWER HTML -->
+<div id="cart-backdrop" class="fixed inset-0 bg-black/50 z-[100] hidden opacity-0 transition-opacity duration-300"></div>
+<div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-surface z-[101] translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <!-- Header -->
+    <div class="px-6 py-4 flex items-center justify-between border-b border-outline-variant">
+        <h2 class="font-headline-md text-primary text-xl">Your Cart</h2>
+        <button id="cart-close-btn" class="text-on-surface-variant hover:text-error transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <!-- Items -->
+    <div id="cart-items-container" class="flex-grow overflow-y-auto px-6">
+        <!-- Injected via cart.js -->
+    </div>
+    <!-- Footer -->
+    <div class="p-6 border-t border-outline-variant bg-surface-container-lowest">
+        <div class="flex justify-between items-center mb-4">
+            <span class="font-body-lg font-semibold text-on-surface">Subtotal</span>
+            <div class="flex items-baseline gap-2">
+                <span id="cart-original-total" class="font-body-md text-on-surface-variant line-through hidden">$0.00</span>
+                <span id="cart-total" class="font-headline-md font-bold text-primary">$0.00</span>
+            </div>
+        </div>
+        <button id="cart-checkout-btn" class="w-full bg-primary text-on-primary font-label-caps py-4 rounded uppercase tracking-widest hover:bg-primary-container transition-colors">
+            Checkout Now
+        </button>
+    </div>
+</div>
+
+<!-- $25 Discount Modal -->
+<div id="discount-modal" class="fixed inset-0 bg-primary/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div id="discount-modal-box" class="w-full max-w-md bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-2xl overflow-hidden relative transform scale-95 transition-transform duration-300">
+        <!-- Close Button -->
+        <button onclick="closeDiscountModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors p-1.5 rounded-full hover:bg-surface-container-high z-10" aria-label="Close">
+            <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+
+        <!-- Modal Header -->
+        <div class="pt-8 px-6 pb-2 text-center relative">
+            <h3 class="font-body-md text-2xl text-primary font-bold mb-1">Get $25 Off Your Order</h3>
+            <p class="font-body-md text-xs text-on-surface-variant max-w-xs mx-auto">Enter your details below to receive your exclusive $25 discount code for your first purchase.</p>
+        </div>
+
+        <!-- Modal Content Body -->
+        <div class="px-6 pb-6">
+            <form id="discount-form" onsubmit="handleDiscountSubmit(event)" class="space-y-4">
+                <div class="flex gap-4">
+                    <div class="w-1/2">
+                        <label for="discount-firstname" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">First Name</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
+                            <input type="text" id="discount-firstname" required placeholder="Jane" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <label for="discount-lastname" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">Last Name</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
+                            <input type="text" id="discount-lastname" required placeholder="Doe" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="discount-email" class="block font-body-md text-xs font-semibold text-on-surface mb-1.5">Email Address</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">mail</span>
+                        <input type="email" id="discount-email" required placeholder="parent@example.com" class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-secondary text-on-secondary font-body-md font-bold py-3.5 px-6 rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-all flex items-center justify-center gap-2 shadow-md group">
+                    <span>Send Me My $25 Code</span>
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
+                <p class="text-[11px] text-center text-on-surface-variant">We value your privacy. No spam ever — unsubscribe at any time.</p>
+                <p id="discount-error" class="text-xs text-error text-center font-bold hidden"></p>
+            </form>
+
+            <!-- Success State -->
+            <div id="discount-success" class="hidden text-center py-2 space-y-4">
+                <div class="w-12 h-12 bg-secondary/15 text-secondary rounded-full flex items-center justify-center mx-auto mb-1">
+                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+                <div>
+                    <h4 class="font-headline-md text-xl font-bold text-primary mb-1">Your $25 Code Is Ready!</h4>
+                    <p class="font-body-md text-xs text-on-surface-variant">Use this code at checkout to apply your $25 discount:</p>
+                </div>
+                <div class="bg-surface-container-high border-2 border-dashed border-secondary/60 rounded-xl p-3 flex items-center justify-between gap-2">
+                    <span id="discount-code-text" class="font-mono text-xl font-bold tracking-widest text-primary px-2">CHTUITION1012</span>
+                    <button onclick="copyDiscountCode()" id="copy-code-btn" class="bg-primary text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-primary-container transition-colors shrink-0 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">content_copy</span>
+                        <span>Copy</span>
+                    </button>
+                </div>
+                <button onclick="closeDiscountModal()" class="w-full bg-primary text-white font-body-md font-bold py-3 px-6 rounded-lg hover:bg-primary-container transition-colors">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openDiscountModal() {
+        const modal = document.getElementById('discount-modal');
+        const box = document.getElementById('discount-modal-box');
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            modal.classList.remove('opacity-0');
+            if (box) {
+                box.classList.remove('scale-95');
+                box.classList.add('scale-100');
+            }
+        });
+    }
+
+    function closeDiscountModal() {
+        const modal = document.getElementById('discount-modal');
+        const box = document.getElementById('discount-modal-box');
+        if (!modal) return;
+        modal.classList.add('opacity-0');
+        if (box) {
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+        }
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    async function handleDiscountSubmit(e) {
+        e.preventDefault();
+        const emailInput = document.getElementById('discount-email');
+        const firstNameInput = document.getElementById('discount-firstname');
+        const lastNameInput = document.getElementById('discount-lastname');
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const errorEl = document.getElementById('discount-error');
+        const originalBtnHtml = submitBtn.innerHTML;
+
+        if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">refresh</span><span>Sending...</span>';
+            errorEl.classList.add('hidden');
+
+            try {
+                const res = await fetch('/api/submit-discount', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        firstName: firstNameInput.value,
+                        lastName: lastNameInput.value
+                    })
+                });
+
+                if (!res.ok) throw new Error('Network error');
+
+                if (window.posthog) {
+                    window.posthog.capture('discount_code_claimed', { 
+                        email: emailInput.value,
+                        firstName: firstNameInput.value,
+                        lastName: lastNameInput.value
+                    });
+                }
+                if (window.fbq) {
+                    window.fbq('track', 'Lead', { content_name: '$25 Discount Claimed' });
+                }
+                document.getElementById('discount-form').classList.add('hidden');
+                document.getElementById('discount-success').classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+                errorEl.textContent = 'Oops! Something went wrong. Please try again.';
+                errorEl.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
+        }
+    }
+
+    function copyDiscountCode() {
+        const codeText = document.getElementById('discount-code-text').innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+            const btn = document.getElementById('copy-code-btn');
+            if (btn) {
+                btn.innerHTML = '<span class="material-symbols-outlined text-sm">done</span><span>Copied!</span>';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary', 'text-on-secondary');
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined text-sm">content_copy</span><span>Copy</span>';
+                    btn.classList.remove('bg-secondary', 'text-on-secondary');
+                    btn.classList.add('bg-primary');
+                }, 2000);
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const discountModal = document.getElementById('discount-modal');
+        if (discountModal) {
+            discountModal.addEventListener('click', (e) => {
+                if (e.target === discountModal) {
+                    closeDiscountModal();
+                }
+            });
+        }
+    });
+</script>
+<script src="cart.js?v=7"></script>
+</body></html>

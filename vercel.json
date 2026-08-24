@@ -56,6 +56,10 @@
       "destination": "/ch_tuition_storefront_desktop/terms"
     },
     {
+      "source": "/chpreplab",
+      "destination": "/ch_tuition_storefront_desktop/chpreplab"
+    },
+    {
       "source": "/(.*)",
       "destination": "/ch_tuition_storefront_desktop/$1"
     }
