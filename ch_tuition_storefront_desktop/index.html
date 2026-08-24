@@ -1094,6 +1094,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
                     <span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
                 </button>
                 <p class="text-[11px] text-center text-on-surface-variant">We value your privacy. No spam ever — unsubscribe at any time.</p>
+                <p id="discount-error" class="text-xs text-error text-center font-bold hidden"></p>
             </form>
 
             <!-- Success State -->
@@ -1149,36 +1150,54 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
         }, 300);
     }
 
-    function handleDiscountSubmit(e) {
+    async function handleDiscountSubmit(e) {
         e.preventDefault();
         const emailInput = document.getElementById('discount-email');
         const firstNameInput = document.getElementById('discount-firstname');
         const lastNameInput = document.getElementById('discount-lastname');
-        if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
-            fetch('/api/submit-discount', {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: emailInput.value,
-                    firstName: firstNameInput.value,
-                    lastName: lastNameInput.value
-                })
-            }).catch(err => console.error(err));
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const errorEl = document.getElementById('discount-error');
+        const originalBtnHtml = submitBtn.innerHTML;
 
-            if (window.posthog) {
-                window.posthog.capture('discount_code_claimed', { 
-                    email: emailInput.value,
-                    firstName: firstNameInput.value,
-                    lastName: lastNameInput.value
+        if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">refresh</span><span>Sending...</span>';
+            errorEl.classList.add('hidden');
+
+            try {
+                const res = await fetch('/api/submit-discount', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        firstName: firstNameInput.value,
+                        lastName: lastNameInput.value
+                    })
                 });
+
+                if (!res.ok) throw new Error('Network error');
+
+                if (window.posthog) {
+                    window.posthog.capture('discount_code_claimed', { 
+                        email: emailInput.value,
+                        firstName: firstNameInput.value,
+                        lastName: lastNameInput.value
+                    });
+                }
+                if (window.fbq) {
+                    window.fbq('track', 'Lead', { content_name: '$25 Discount Claimed' });
+                }
+                document.getElementById('discount-form').classList.add('hidden');
+                document.getElementById('discount-success').classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+                errorEl.textContent = 'Oops! Something went wrong. Please try again.';
+                errorEl.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
             }
-            if (window.fbq) {
-                window.fbq('track', 'Lead', { content_name: '$25 Discount Claimed' });
-            }
-            document.getElementById('discount-form').classList.add('hidden');
-            document.getElementById('discount-success').classList.remove('hidden');
         }
     }
 
