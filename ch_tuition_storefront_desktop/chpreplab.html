@@ -421,7 +421,7 @@ document.getElementById('waitlist-form').addEventListener('submit', async functi
     btn.disabled = true;
 
     try {
-        await fetch('https://n8n.mathportal.com.au/webhook/95fbe0ae-c332-44c1-ac7e-e07a1893125c222', {
+        const res = await fetch('/api/submit-waitlist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -433,13 +433,20 @@ document.getElementById('waitlist-form').addEventListener('submit', async functi
                 id: 'chprelabwaitlist10112'
             })
         });
+        
+        const data = await res.json();
+        
+        if (!res.ok || !data.success) {
+            throw new Error(data.error || 'Server returned failure status');
+        }
+
         document.getElementById('waitlist-form').classList.add('hidden');
         document.getElementById('waitlist-success').classList.remove('hidden');
     } catch (error) {
         console.error('Error:', error);
         btn.innerHTML = originalText;
         btn.disabled = false;
-        alert('There was an error joining the waitlist. Please try again.');
+        alert('There was an error joining the waitlist. Error: ' + error.message);
     }
 });
 </script>
