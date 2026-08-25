@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { email, firstName, lastName, id } = req.body;
 
   try {
-    const response = await fetch('https://n8n.mathportal.com.au/webhook/95fbe0ae-c332-44c1-ac7e-e07a1893125c222', {
+    const response = await fetch('https://n8n.mathportal.com.au/webhook/c0808945-d92e-4e7c-a5f1-fe79e331b018chprepwaitlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
