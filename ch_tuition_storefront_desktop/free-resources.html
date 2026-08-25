@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="https://chtuition.com.au/favicon.ico" type="image/x-icon">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script id="tailwind-config">
@@ -324,47 +325,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
             </div>
             <!-- Form -->
             <div class="px-6 md:px-8 py-6">
-                <form id="resources-pack-form" onsubmit="handleResourcesPackSubmit(event)" class="space-y-4">
-                    <div class="flex gap-3">
-                        <div class="relative w-1/2">
-                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
-                            <input type="text" id="pack-firstname" required placeholder="First name" class="w-full pl-10 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
-                        </div>
-                        <div class="relative w-1/2">
-                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">person</span>
-                            <input type="text" id="pack-lastname" required placeholder="Last name" class="w-full pl-10 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">mail</span>
-                        <input type="email" id="pack-email" required placeholder="parent@example.com" class="w-full pl-10 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-all">
-                    </div>
-                    <!-- Consent Checkbox -->
-                    <label class="flex items-start gap-3 cursor-pointer group">
-                        <input type="checkbox" id="pack-consent" required class="mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary focus:ring-offset-0 cursor-pointer">
-                        <span class="text-xs text-on-surface-variant leading-relaxed">I agree to receive my free resources pack and occasional updates from CH Tuition about new materials, offers, and Selective School preparation tips. You can unsubscribe at any time. View our <a href="/privacy" class="underline hover:text-primary transition-colors">Privacy Policy</a>.</span>
-                    </label>
-                    <button type="submit" id="pack-submit-btn" class="w-full bg-secondary text-on-secondary font-label-caps text-sm py-4 px-6 uppercase tracking-widest hover:bg-secondary-container hover:text-on-secondary-container transition-all flex items-center justify-center gap-2 shadow-sm rounded group">
-                        <span class="material-symbols-outlined text-lg">download</span>
-                        <span>Send Me the Free Resources Pack</span>
-                    </button>
-                    <p id="pack-error" class="text-xs text-error text-center font-bold hidden"></p>
-                </form>
-
-                <!-- Success State -->
-                <div id="pack-success" class="hidden text-center py-6 space-y-4">
-                    <div class="w-16 h-16 bg-secondary/15 text-secondary rounded-full flex items-center justify-center mx-auto">
-                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-                    </div>
-                    <div>
-                        <h4 class="font-headline-md text-xl font-bold text-primary mb-1">You're All Set!</h4>
-                        <p class="font-body-md text-sm text-on-surface-variant">Your free resources pack is on its way. Check your spam folder if you don't see it within 5 minutes.</p>
-                    </div>
-                    <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary transition-colors">
-                        <span>Continue browsing</span>
-                        <span class="material-symbols-outlined text-base">arrow_forward</span>
-                    </a>
-                </div>
+                <iframe data-tally-src="https://tally.so/embed/J9G95R?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="220" frameborder="0" marginheight="0" marginwidth="0" title="Free Mini Tests Form"></iframe>
             </div>
         </div>
     </section>
@@ -405,64 +366,21 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 </footer>
 
 <script>
-    // Handle Resources Pack form submission
-    async function handleResourcesPackSubmit(e) {
-        e.preventDefault();
-        const emailInput = document.getElementById('pack-email');
-        const firstNameInput = document.getElementById('pack-firstname');
-        const lastNameInput = document.getElementById('pack-lastname');
-        const consentCheckbox = document.getElementById('pack-consent');
-        const submitBtn = document.getElementById('pack-submit-btn');
-        const errorEl = document.getElementById('pack-error');
-        const originalBtnHtml = submitBtn.innerHTML;
-
-        if (!consentCheckbox.checked) {
-            errorEl.textContent = 'Please agree to receive the resources pack to continue.';
-            errorEl.classList.remove('hidden');
-            return;
-        }
-
-        if (emailInput && emailInput.value && firstNameInput && firstNameInput.value && lastNameInput && lastNameInput.value) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">refresh</span><span>Sending...</span>';
-            errorEl.classList.add('hidden');
-
-            try {
-                const res = await fetch('/api/submit-discount', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: emailInput.value,
-                        firstName: firstNameInput.value,
-                        lastName: lastNameInput.value,
-                        source: 'free_resources_pack',
-                        consent: true
-                    })
+    // Track Lead event when Tally form is submitted
+    window.addEventListener('message', (e) => {
+        if (e.data && typeof e.data === 'string' && e.data.includes('Tally.FormSubmitted')) {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Free Resources Pack Signup (Free Resources Page)'
                 });
-
-                if (!res.ok) throw new Error('Network error');
-
-                if (window.posthog) {
-                    window.posthog.capture('free_resources_pack_signup', {
-                        email: emailInput.value,
-                        source: 'free_resources_page'
-                    });
-                }
-                if (window.fbq) {
-                    window.fbq('track', 'Lead', { content_name: 'Free Resources Pack Download' });
-                }
-
-                document.getElementById('resources-pack-form').classList.add('hidden');
-                document.getElementById('pack-success').classList.remove('hidden');
-            } catch (err) {
-                console.error(err);
-                errorEl.textContent = 'Oops! Something went wrong. Please try again.';
-                errorEl.classList.remove('hidden');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnHtml;
+            }
+            if (window.posthog) {
+                window.posthog.capture('free_resources_pack_signup', {
+                    source: 'free_resources_page'
+                });
             }
         }
-    }
+    });
 </script>
 
 </body></html>
