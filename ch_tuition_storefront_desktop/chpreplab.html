@@ -399,13 +399,50 @@ function updateVariant(type) {
     </div>
     <p class="font-body-md text-sm text-on-secondary-container">Join the wait list now and get <span class="font-bold text-secondary">50% OFF</span> when we launch — just <span class="font-bold">$49.99/year</span>!</p>
 </div>
-<form action="javascript:void(0)" class="flex flex-col gap-3 mb-3">
-    <input type="email" required placeholder="Enter your email address" class="w-full font-body-lg text-body-lg py-4 px-4 rounded border border-outline bg-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-    <button type="submit" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+<form id="waitlist-form" action="javascript:void(0)" class="flex flex-col gap-3 mb-3">
+    <div class="flex gap-3">
+        <input type="text" id="waitlist-first-name" required placeholder="First Name" class="w-1/2 font-body-lg text-body-lg py-4 px-4 rounded border border-outline bg-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        <input type="text" id="waitlist-last-name" required placeholder="Last Name" class="w-1/2 font-body-lg text-body-lg py-4 px-4 rounded border border-outline bg-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+    </div>
+    <input type="email" id="waitlist-email" required placeholder="Enter your email address" class="w-full font-body-lg text-body-lg py-4 px-4 rounded border border-outline bg-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+    <button type="submit" id="waitlist-submit" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
         <span class="">Join Wait List</span>
         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
     </button>
 </form>
+<p id="waitlist-success" class="hidden text-secondary font-bold text-center mb-3">You've been added to the waitlist!</p>
+
+<script>
+document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('waitlist-submit');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Joining...';
+    btn.disabled = true;
+
+    try {
+        await fetch('https://n8n.mathportal.com.au/webhook/95fbe0ae-c332-44c1-ac7e-e07a1893125c222', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstName: document.getElementById('waitlist-first-name').value,
+                lastName: document.getElementById('waitlist-last-name').value,
+                email: document.getElementById('waitlist-email').value,
+                id: 'chprelabwaitlist10112'
+            })
+        });
+        document.getElementById('waitlist-form').classList.add('hidden');
+        document.getElementById('waitlist-success').classList.remove('hidden');
+    } catch (error) {
+        console.error('Error:', error);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('There was an error joining the waitlist. Please try again.');
+    }
+});
+</script>
 <div class="flex items-center justify-center gap-1.5 mb-6 text-on-surface-variant">
     <span class="material-symbols-outlined text-[16px]">group</span>
     <span class="font-label-caps text-[11px] uppercase font-bold tracking-wider">Be first in line — Limited spots available</span>
