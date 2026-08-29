@@ -309,7 +309,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <div class="space-y-3 mb-6" id="tier-selector">
     <!-- Good Tier -->
     <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-outline-variant hover:border-outline bg-surface-container-lowest" data-tier="good">
-        <input type="radio" name="tier" value="good" class="hidden">
+        <input type="radio" name="tier" value="good" class="opacity-0 absolute w-0 h-0 -z-10">
         <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center shrink-0 tier-radio transition-colors">
             <div class="w-2.5 h-2.5 rounded-full bg-transparent transition-colors tier-radio-dot"></div>
         </div>
@@ -324,7 +324,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 
     <!-- Better Tier (Default Selected) -->
     <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-secondary bg-secondary/5 shadow-sm" data-tier="better">
-        <input type="radio" name="tier" value="better" class="hidden" checked>
+        <input type="radio" name="tier" value="better" class="opacity-0 absolute w-0 h-0 -z-10" checked>
         <div class="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 tier-radio transition-colors">
             <div class="w-2.5 h-2.5 rounded-full bg-secondary transition-colors tier-radio-dot"></div>
         </div>
@@ -340,7 +340,7 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 
     <!-- Best Tier -->
     <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-outline-variant hover:border-outline bg-surface-container-lowest" data-tier="best">
-        <input type="radio" name="tier" value="best" class="hidden">
+        <input type="radio" name="tier" value="best" class="opacity-0 absolute w-0 h-0 -z-10">
         <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center shrink-0 tier-radio transition-colors">
             <div class="w-2.5 h-2.5 rounded-full bg-transparent transition-colors tier-radio-dot"></div>
         </div>
@@ -2125,7 +2125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 <script>
     // Tier selector logic
-    document.addEventListener('DOMContentLoaded', () => {
+    // Tier selector logic
+    (function() {
         const tierData = {
             good: {
                 id: 'essential-pack',
@@ -2165,25 +2166,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (optionTier === tier) {
                     option.classList.remove('border-outline-variant', 'hover:border-outline', 'bg-surface-container-lowest');
                     option.classList.add('border-secondary', 'bg-secondary/5', 'shadow-sm');
-                    radio.classList.remove('border-outline-variant');
-                    radio.classList.add('border-secondary');
-                    dot.classList.remove('bg-transparent');
-                    dot.classList.add('bg-secondary');
-                    input.checked = true;
+                    if(radio) {
+                        radio.classList.remove('border-outline-variant');
+                        radio.classList.add('border-secondary');
+                    }
+                    if(dot) {
+                        dot.classList.remove('bg-transparent');
+                        dot.classList.add('bg-secondary');
+                    }
+                    if(input) input.checked = true;
                 } else {
                     option.classList.remove('border-secondary', 'bg-secondary/5', 'shadow-sm');
                     option.classList.add('border-outline-variant', 'hover:border-outline', 'bg-surface-container-lowest');
-                    radio.classList.remove('border-secondary');
-                    radio.classList.add('border-outline-variant');
-                    dot.classList.remove('bg-secondary');
-                    dot.classList.add('bg-transparent');
-                    input.checked = false;
+                    if(radio) {
+                        radio.classList.remove('border-secondary');
+                        radio.classList.add('border-outline-variant');
+                    }
+                    if(dot) {
+                        dot.classList.remove('bg-secondary');
+                        dot.classList.add('bg-transparent');
+                    }
+                    if(input) input.checked = false;
                 }
             });
 
             // Update price display
             const priceEl = document.getElementById('tier-price');
-            if (priceEl) priceEl.innerHTML = tierData[tier].priceDisplay;
+            if (priceEl && tierData[tier]) {
+                priceEl.innerHTML = tierData[tier].priceDisplay;
+            }
 
             // Show/hide benefit panels
             document.querySelectorAll('.tier-benefits-panel').forEach(panel => {
@@ -2219,10 +2230,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Attach click handlers to tier option labels
         document.querySelectorAll('.tier-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent double-firing from label wrapping input
-                const tier = option.getAttribute('data-tier');
-                updateTierUI(tier);
+            option.addEventListener('click', function() {
+                const tier = this.getAttribute('data-tier');
+                if (tier) updateTierUI(tier);
             });
         });
 
@@ -2231,7 +2241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', () => {
                 const tier = tierData[selectedTier];
-                if (window.addToCart) {
+                if (window.addToCart && tier) {
                     window.addToCart({
                         id: tier.id,
                         name: tier.name,
@@ -2242,13 +2252,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Check URL params for pre-selected tier
+        // Check URL params for pre-selected tier, otherwise init default
         const params = new URLSearchParams(window.location.search);
         const urlTier = params.get('tier');
         if (urlTier && tierData[urlTier]) {
             updateTierUI(urlTier);
+        } else {
+            updateTierUI('better');
         }
-    });
+    })();
 </script>
 <script src="cart.js?v=8"></script>
 </body></html>
