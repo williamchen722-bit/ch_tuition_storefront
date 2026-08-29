@@ -2217,11 +2217,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Attach click handlers to tier option labels
-        document.querySelectorAll('.tier-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const tier = option.getAttribute('data-tier');
-                updateTierUI(tier);
+        // Attach change handlers to tier radio inputs
+        document.querySelectorAll('input[name="tier"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    updateTierUI(e.target.value);
+                }
             });
         });
 
