@@ -442,6 +442,61 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
     </div>
 </div>
 
+<!-- Free Gifts Section (Dynamic based on tier) -->
+<div class="mb-8 border border-outline-variant rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm" id="free-gifts-section">
+    <div class="flex justify-between items-center px-5 py-3 border-b border-outline-variant/50 bg-surface-container-low">
+        <h3 class="font-body-lg text-sm text-primary font-bold tracking-tight flex items-center gap-2">
+            First Time Purchase includes:
+        </h3>
+    </div>
+    
+    <div class="px-5 py-4">
+        <!-- Better/Best Bonus: Mini Math Test Pack -->
+        <div class="flex items-center justify-between" id="bonus-mini-pack">
+            <div class="flex items-center gap-4">
+                <div class="relative shrink-0">
+                    <div class="w-14 h-14 bg-surface-container-low rounded-md border border-outline-variant/50 overflow-hidden flex items-center justify-center">
+                        <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg" alt="Mini Math Test Pack" class="w-full h-full object-cover mix-blend-multiply">
+                    </div>
+                    <div class="absolute -top-2 -right-2 bg-secondary text-on-secondary w-6 h-6 rounded-full flex items-center justify-center shadow-md">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded uppercase tracking-wider font-bold">FREE</span>
+                    <span class="font-body-md text-sm text-on-surface font-semibold leading-tight">Math Selective Mini Test Pack<br><span class="text-xs font-normal text-on-surface-variant">(100 Questions)</span></span>
+                </div>
+            </div>
+            <div class="text-right shrink-0 pl-4">
+                <span class="font-body-md text-sm text-on-surface-variant line-through mr-1 opacity-70">$19.99</span>
+                <span class="font-body-md text-base text-secondary font-bold">FREE</span>
+            </div>
+        </div>
+        
+        <!-- Best Bonus: CH Prep Lab -->
+        <div class="flex items-center justify-between pt-4 mt-4 border-t border-outline-variant/30 hidden" id="bonus-prep-lab">
+            <div class="flex items-center gap-4">
+                <div class="relative shrink-0">
+                    <div class="w-14 h-14 bg-surface-container-low rounded-md border border-outline-variant/50 overflow-hidden flex items-center justify-center">
+                        <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg" alt="CH Prep Lab" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -top-2 -right-2 bg-secondary text-on-secondary w-6 h-6 rounded-full flex items-center justify-center shadow-md">
+                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded uppercase tracking-wider font-bold">FREE</span>
+                    <span class="font-body-md text-sm text-on-surface font-semibold leading-tight">1 Year Access to CH Prep Lab<br><span class="text-xs font-normal text-on-surface-variant">(Full features & analytics)</span></span>
+                </div>
+            </div>
+            <div class="text-right shrink-0 pl-4">
+                <span class="font-body-md text-sm text-on-surface-variant line-through mr-1 opacity-70">$99.99</span>
+                <span class="font-body-md text-base text-secondary font-bold">FREE</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Row 5: CTA -->
 <button id="add-to-cart-btn" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-3 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
 <span class="">Add to Cart / Instant Download</span>
@@ -2139,6 +2194,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     panel.classList.add('hidden');
                 }
             });
+
+            // Show/hide free gifts
+            const freeGiftsSection = document.getElementById('free-gifts-section');
+            const bonusMiniPack = document.getElementById('bonus-mini-pack');
+            const bonusPrepLab = document.getElementById('bonus-prep-lab');
+            
+            if (freeGiftsSection) {
+                if (tier === 'good') {
+                    freeGiftsSection.classList.add('hidden');
+                } else {
+                    freeGiftsSection.classList.remove('hidden');
+                    
+                    if (tier === 'better') {
+                        if (bonusMiniPack) bonusMiniPack.classList.remove('hidden');
+                        if (bonusPrepLab) bonusPrepLab.classList.add('hidden');
+                    } else if (tier === 'best') {
+                        if (bonusMiniPack) bonusMiniPack.classList.remove('hidden');
+                        if (bonusPrepLab) bonusPrepLab.classList.remove('hidden');
+                    }
+                }
+            }
         }
 
         // Attach click handlers to tier option labels
