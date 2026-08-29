@@ -2,39 +2,59 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Cart State
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Migrate old cart items to ensure correct originalPrice and image fields are present
+    // Migrate old cart items to new tier structure
     let migrated = false;
     cart = cart.map(item => {
+        // Migrate legacy 'prep-pack' items to 'exam-vault' (Better tier)
         if (item.id === 'prep-pack') {
-            if (!item.originalPrice || item.originalPrice !== 39.99) {
-                item.originalPrice = 39.99;
-                migrated = true;
-            }
-        } else if (item.id === 'bonus-mini-pack') {
-            if (!item.originalPrice || item.originalPrice !== 19.99) {
-                item.originalPrice = 19.99;
-                migrated = true;
-            }
-            if (item.image !== 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg') {
-                item.image = 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg';
-                migrated = true;
-            }
-        } else if (item.id === 'bonus-prep-lab') {
-            if (!item.originalPrice || item.originalPrice !== 99.99) {
-                item.originalPrice = 99.99;
-                migrated = true;
-            }
-            if (item.image !== 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg') {
-                item.image = 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg';
-                migrated = true;
-            }
+            item.id = 'exam-vault';
+            item.name = 'Complete 2027 Exam Vault (20 Papers + 10 Mini Sprint)';
+            item.price = 89;
+            item.originalPrice = undefined;
+            migrated = true;
         }
         return item;
     });
+    // Remove legacy bonus items that were auto-added with old prep-pack
+    const legacyBonusIds = ['bonus-mini-pack', 'bonus-prep-lab'];
+    const hadLegacyBonuses = cart.some(item => legacyBonusIds.includes(item.id));
+    if (hadLegacyBonuses) {
+        cart = cart.filter(item => !legacyBonusIds.includes(item.id));
+        migrated = true;
+    }
     if (migrated) {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
     
+    // Product definitions for the three tiers
+    const TIER_PRODUCTS = {
+        'essential-pack': {
+            id: 'essential-pack',
+            name: 'Essential Practice Pack (10 Papers)',
+            price: 49,
+            image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+        },
+        'exam-vault': {
+            id: 'exam-vault',
+            name: 'Complete 2027 Exam Vault (20 Papers + 10 Mini Sprint)',
+            price: 89,
+            image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+        },
+        'all-access-bundle': {
+            id: 'all-access-bundle',
+            name: 'CH Prep Lab All-Access Bundle',
+            price: 139,
+            image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+        }
+    };
+
+    // Stripe checkout links per tier (update these when separate links are created)
+    const CHECKOUT_LINKS = {
+        'essential-pack': 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04',
+        'exam-vault': 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04',
+        'all-access-bundle': 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04'
+    };
+
     // UI Elements
     const cartBadges = document.querySelectorAll('.cart-badge');
     const cartDrawer = document.getElementById('cart-drawer');
@@ -97,6 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 cart.forEach((item, index) => {
                     const itemEl = document.createElement('div');
                     itemEl.className = 'flex gap-4 py-4 border-b border-outline-variant';
+                    
+                    const originalPriceHtml = item.originalPrice && item.originalPrice > item.price
+                        ? `<p class="font-body-sm text-on-surface-variant line-through">${formatPrice(item.originalPrice)}</p>`
+                        : '';
+                    
                     itemEl.innerHTML = `
                         <div class="w-20 h-24 bg-surface-container-low border border-outline-variant rounded flex-shrink-0 overflow-hidden">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover mix-blend-multiply">
@@ -106,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h4 class="font-body-md text-primary font-semibold line-clamp-2">${item.name}</h4>
                                 <div class="flex items-baseline gap-2 mt-1">
                                     <p class="font-body-md text-primary font-bold">${formatPrice(item.price)}</p>
-                                    ${(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : (item.id === 'bonus-mini-pack' ? 19.99 : null))) ? `<p class="font-body-sm text-on-surface-variant line-through">${formatPrice(item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : 19.99))}</p>` : ''}
+                                    ${originalPriceHtml}
                                 </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
@@ -134,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalTotalEl = document.getElementById('cart-original-total');
             if (originalTotalEl) {
                 const originalTotal = cart.reduce((total, item) => {
-                    const origPrice = item.originalPrice !== undefined ? item.originalPrice : (item.id === 'prep-pack' ? 39.99 : item.price);
+                    const origPrice = item.originalPrice !== undefined ? item.originalPrice : item.price;
                     return total + (origPrice * item.quantity);
                 }, 0);
                 
@@ -180,6 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+        // Remove any existing tier products (user can only have one tier at a time)
+        const tierIds = Object.keys(TIER_PRODUCTS);
+        if (tierIds.includes(productObj.id)) {
+            cart = cart.filter(item => !tierIds.includes(item.id));
+        }
+
         const existingItem = cart.find(item => item.id === productObj.id);
         if (existingItem) {
             existingItem.quantity += 1;
@@ -188,32 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ...productObj,
                 quantity: 1
             });
-            
-            // Auto-add bonus items
-            if (productObj.id === 'prep-pack') {
-                const bonus1Exists = cart.find(item => item.id === 'bonus-mini-pack');
-                if (!bonus1Exists) {
-                    cart.push({
-                        id: 'bonus-mini-pack',
-                        name: 'Math Selective Mini Test Pack (10 Tests)',
-                        price: 0,
-                        originalPrice: 19.99,
-                        image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg',
-                        quantity: 1
-                    });
-                }
-                const bonus2Exists = cart.find(item => item.id === 'bonus-prep-lab');
-                if (!bonus2Exists) {
-                    cart.push({
-                        id: 'bonus-prep-lab',
-                        name: 'CH Prep Lab Subscription (1 Year)',
-                        price: 0,
-                        originalPrice: 99.99,
-                        image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg',
-                        quantity: 1
-                    });
-                }
-            }
         }
         saveCart();
         updateCartUI();
@@ -258,7 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
-                window.location.href = 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04';
+                // Use the checkout link for the first tier product in cart, or default
+                const tierItem = cart.find(item => Object.keys(CHECKOUT_LINKS).includes(item.id));
+                const checkoutUrl = tierItem 
+                    ? CHECKOUT_LINKS[tierItem.id] 
+                    : 'https://buy.stripe.com/5kQ14n8JIg7Z1C07KFcMM04';
+                window.location.href = checkoutUrl;
             }
         });
     }

@@ -302,102 +302,148 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">4.89/5 Rating</span>
 </div>
 <!-- Row 2: Headline -->
-<h1 class="font-headline-lg text-headline-lg text-primary mb-6">Selective Math Test Prep Package (20 Papers)</h1>
-<!-- Row 3: Pricing -->
-<div class="flex items-baseline gap-3 mb-6">
-<span class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight">$39.99 <span class="font-semibold">AUD</span></span>
-<span class="font-body-md text-[24px] text-[#74777f] line-through">$69.99 AUD</span>
-</div>
-<!-- Row 4: Bullet Points -->
-<p class="font-body-md text-body-md text-on-surface mb-3 font-semibold">Includes:</p>
-<ul class="space-y-3 mb-10">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">Format-aligned for 2027 test structure and difficulty</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">Includes full step-by-step solutions for independent review</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">Medium difficulty level</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface flex items-center gap-2 flex-wrap">
-    <span>FREE 1 Year Access to CH Prep Lab <span class="line-through text-outline ml-1">$99.99</span></span>
-    <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">FREE BONUS</span>
-</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">Full curriculum coverage</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">700+ practice questions (plus an extra 100 bonus questions)</span>
-</li>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-3" id="product-title">Selective Math Test Prep Package</h1>
+<p class="font-body-md text-sm text-on-surface-variant mb-6 italic">Engineered over 600+ hours by NSW curriculum specialists to match the exact 2027 Cambridge-style multi-step problem formats.</p>
 
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary mt-0.5" data-icon="check_circle">check_circle</span>
-<span class="font-body-lg text-body-lg text-on-surface">Co-developed and vetted with feedback from over 50 local families to target the exact traps that trip students up on test day.</span>
-</li>
-</ul>
-<!-- Free Gifts Section -->
-<div class="mb-8 border border-outline-variant rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
-    <div class="flex justify-between items-center px-5 py-3 border-b border-outline-variant/50 bg-surface-container-low">
-        <h3 class="font-body-lg text-sm text-primary font-bold tracking-tight flex items-center gap-2">
-            First Time Purchase includes:
-        </h3>
+<!-- Tier Selector Cards -->
+<div class="space-y-3 mb-6" id="tier-selector">
+    <!-- Good Tier -->
+    <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-outline-variant hover:border-outline bg-surface-container-lowest" data-tier="good">
+        <input type="radio" name="tier" value="good" class="hidden">
+        <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center shrink-0 tier-radio transition-colors">
+            <div class="w-2.5 h-2.5 rounded-full bg-transparent transition-colors tier-radio-dot"></div>
+        </div>
+        <div class="flex-grow">
+            <div class="flex items-center gap-2">
+                <span class="font-body-md text-sm font-bold text-primary">Essential Practice Pack</span>
+            </div>
+            <span class="font-body-md text-xs text-on-surface-variant">10 Full-Length Mock Papers + Solutions</span>
+        </div>
+        <span class="font-body-md text-lg font-bold text-primary shrink-0">$49</span>
+    </label>
+
+    <!-- Better Tier (Default Selected) -->
+    <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-secondary bg-secondary/5 shadow-sm" data-tier="better">
+        <input type="radio" name="tier" value="better" class="hidden" checked>
+        <div class="w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 tier-radio transition-colors">
+            <div class="w-2.5 h-2.5 rounded-full bg-secondary transition-colors tier-radio-dot"></div>
+        </div>
+        <div class="flex-grow">
+            <div class="flex items-center gap-2">
+                <span class="font-body-md text-sm font-bold text-primary">Complete 2027 Exam Vault</span>
+                <span class="bg-secondary text-on-secondary font-label-caps text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">RECOMMENDED</span>
+            </div>
+            <span class="font-body-md text-xs text-on-surface-variant">All 20 Papers + 10 Mini Sprint + Strategy Guide</span>
+        </div>
+        <span class="font-body-md text-lg font-bold text-primary shrink-0">$89</span>
+    </label>
+
+    <!-- Best Tier -->
+    <label class="tier-option flex items-center gap-4 p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 border-outline-variant hover:border-outline bg-surface-container-lowest" data-tier="best">
+        <input type="radio" name="tier" value="best" class="hidden">
+        <div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center shrink-0 tier-radio transition-colors">
+            <div class="w-2.5 h-2.5 rounded-full bg-transparent transition-colors tier-radio-dot"></div>
+        </div>
+        <div class="flex-grow">
+            <div class="flex items-center gap-2">
+                <span class="font-body-md text-sm font-bold text-primary">CH Prep Lab All-Access Bundle</span>
+                <span class="bg-primary-container text-secondary-fixed font-label-caps text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">ALL-ACCESS</span>
+            </div>
+            <span class="font-body-md text-xs text-on-surface-variant">All Papers + Full Digital Platform + Analytics</span>
+        </div>
+        <span class="font-body-md text-lg font-bold text-primary shrink-0">$139</span>
+    </label>
+</div>
+
+<!-- Dynamic Price Display -->
+<div class="flex items-baseline gap-3 mb-2" id="price-display">
+    <span class="font-body-md text-[36px] font-bold text-[#1c1b1b] tracking-tight" id="tier-price">$89 <span class="font-semibold text-base">AUD</span></span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant mb-6">For less than a single 1-hour tutoring lesson ($80–$100/hr)</p>
+
+<!-- Dynamic Benefits List -->
+<div id="tier-benefits">
+    <!-- Good benefits (hidden by default) -->
+    <div class="tier-benefits-panel hidden" data-benefits="good">
+        <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Expose Exam Traps: 10 full-length papers uncover hidden multi-step calculation traps before test day</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Zero Parent Friction: Complete step-by-step worked solutions so students review mistakes independently</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Graded Exam Rigor: Calibrated from Benchmark to High-Challenge Traps</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">True 2027 Test Pacing: Calibrated to build stamina for all 35 questions within the 40-minute limit</span>
+            </li>
+        </ul>
     </div>
-    
-    <div class="px-5 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="relative shrink-0">
-                    <div class="w-14 h-14 bg-surface-container-low rounded-md border border-outline-variant/50 overflow-hidden flex items-center justify-center">
-                        <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1782215313/Can_you_make_this_a_202606232148_tcunbl.jpg" alt="Mini Math Test Pack" class="w-full h-full object-cover mix-blend-multiply">
-                    </div>
-                    <div class="absolute -top-2 -right-2 bg-secondary text-on-secondary w-6 h-6 rounded-full flex items-center justify-center shadow-md">
-                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded uppercase tracking-wider font-bold">FREE</span>
-                    <span class="font-body-md text-sm text-on-surface font-semibold leading-tight">Math Selective Mini Test Pack<br><span class="text-xs font-normal text-on-surface-variant">(100 Questions)</span></span>
-                </div>
-            </div>
-            <div class="text-right shrink-0 pl-4">
-                <span class="font-body-md text-sm text-on-surface-variant line-through mr-1 opacity-70">$19.99</span>
-                <span class="font-body-md text-base text-secondary font-bold">FREE</span>
-            </div>
-        </div>
-        
-        <div class="flex items-center justify-between pt-4 mt-4 border-t border-outline-variant/30">
-            <div class="flex items-center gap-4">
-                <div class="relative shrink-0">
-                    <div class="w-14 h-14 bg-surface-container-low rounded-md border border-outline-variant/50 overflow-hidden flex items-center justify-center">
-                        <img loading="lazy" src="https://res.cloudinary.com/dsjbibh1o/image/upload/v1787311811/Displaying_logo_on_MacBook_Pro_202608212129_vvblow.jpg" alt="CH Prep Lab" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -top-2 -right-2 bg-secondary text-on-secondary w-6 h-6 rounded-full flex items-center justify-center shadow-md">
-                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded uppercase tracking-wider font-bold">FREE</span>
-                    <span class="font-body-md text-sm text-on-surface font-semibold leading-tight">1 Year Access to CH Prep Lab<br><span class="text-xs font-normal text-on-surface-variant">(Full features & analytics)</span></span>
-                </div>
-            </div>
-            <div class="text-right shrink-0 pl-4">
-                <span class="font-body-md text-sm text-on-surface-variant line-through mr-1 opacity-70">$99.99</span>
-                <span class="font-body-md text-base text-secondary font-bold">FREE</span>
-            </div>
-        </div>
+
+    <!-- Better benefits (shown by default) -->
+    <div class="tier-benefits-panel" data-benefits="better">
+        <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Expose Exam Traps: All 20 full-length papers + 10 Mini Sprint papers uncover every hidden multi-step trap</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Zero Parent Friction: Complete step-by-step worked solutions so students review mistakes independently</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">2027 Selective Exam Strategy Guide: Master the exact approach top students use on test day</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">True 2027 Test Pacing: Calibrated to build stamina for all 35 questions within the 40-minute limit</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Graded Exam Rigor: Calibrated from Benchmark to High-Challenge Traps</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Best benefits (hidden by default) -->
+    <div class="tier-benefits-panel hidden" data-benefits="best">
+        <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Expose Exam Traps: All 20 full papers + 10 Mini Sprint papers uncover every hidden multi-step trap</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Zero Parent Friction: Complete step-by-step worked solutions so students review mistakes independently</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">2027 Selective Exam Strategy Guide included</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">1-Year Full Access to CH Prep Lab Portal with automated timed exam simulations</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">Instant Performance & Topic Breakdown Analytics: Know exactly where to focus</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <span class="font-body-lg text-body-lg text-on-surface">True 2027 Test Pacing: Calibrated to build stamina for all 35 questions within the 40-minute limit</span>
+            </li>
+        </ul>
     </div>
 </div>
+
 <!-- Row 5: CTA -->
-<button id="add-to-cart-btn" onclick="window.addToCart({id: 'prep-pack', name: 'Selective Math Test Prep Package (20 Papers)', price: 39.99, originalPrice: 69.99, image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'})" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-3 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+<button id="add-to-cart-btn" class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-4 px-8 rounded flex items-center justify-center gap-3 hover:bg-primary-container transition-colors duration-300 mb-3 group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
 <span class="">Add to Cart / Instant Download</span>
 <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </button>
@@ -413,16 +459,13 @@ src="https://www.facebook.com/tr?id=1000874036052741&ev=PageView&noscript=1"
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">100% Risk-Free Guarantee</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">14-Day Risk-Free Guarantee</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-on-surface-variant" data-icon="print">print</span>
 <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ready to Print</span>
 </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="devices">devices</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Free Online Access <span class="line-through text-outline ml-1">$99.99</span></span>
-</div></div>
+</div>
 </div>
 </section>
 <!-- [ZONE 4: WIDE-ROW SOCIAL PROOF & CROSS-SELL] -->
@@ -2025,6 +2068,110 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+<script>
+    // Tier selector logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const tierData = {
+            good: {
+                id: 'essential-pack',
+                name: 'Essential Practice Pack (10 Papers)',
+                price: 49,
+                priceDisplay: '$49 <span class="font-semibold text-base">AUD</span>',
+                image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+            },
+            better: {
+                id: 'exam-vault',
+                name: 'Complete 2027 Exam Vault (20 Papers + 10 Mini Sprint)',
+                price: 89,
+                priceDisplay: '$89 <span class="font-semibold text-base">AUD</span>',
+                image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+            },
+            best: {
+                id: 'all-access-bundle',
+                name: 'CH Prep Lab All-Access Bundle',
+                price: 139,
+                priceDisplay: '$139 <span class="font-semibold text-base">AUD</span>',
+                image: 'https://res.cloudinary.com/dsjbibh1o/image/upload/v1781769245/Simple_A4_Lined_Paper_nddn1w.png'
+            }
+        };
+
+        let selectedTier = 'better';
+
+        function updateTierUI(tier) {
+            selectedTier = tier;
+
+            // Update radio-button-style tier card visuals
+            document.querySelectorAll('.tier-option').forEach(option => {
+                const optionTier = option.getAttribute('data-tier');
+                const radio = option.querySelector('.tier-radio');
+                const dot = option.querySelector('.tier-radio-dot');
+                const input = option.querySelector('input[type="radio"]');
+
+                if (optionTier === tier) {
+                    option.classList.remove('border-outline-variant', 'hover:border-outline', 'bg-surface-container-lowest');
+                    option.classList.add('border-secondary', 'bg-secondary/5', 'shadow-sm');
+                    radio.classList.remove('border-outline-variant');
+                    radio.classList.add('border-secondary');
+                    dot.classList.remove('bg-transparent');
+                    dot.classList.add('bg-secondary');
+                    input.checked = true;
+                } else {
+                    option.classList.remove('border-secondary', 'bg-secondary/5', 'shadow-sm');
+                    option.classList.add('border-outline-variant', 'hover:border-outline', 'bg-surface-container-lowest');
+                    radio.classList.remove('border-secondary');
+                    radio.classList.add('border-outline-variant');
+                    dot.classList.remove('bg-secondary');
+                    dot.classList.add('bg-transparent');
+                    input.checked = false;
+                }
+            });
+
+            // Update price display
+            const priceEl = document.getElementById('tier-price');
+            if (priceEl) priceEl.innerHTML = tierData[tier].priceDisplay;
+
+            // Show/hide benefit panels
+            document.querySelectorAll('.tier-benefits-panel').forEach(panel => {
+                const panelTier = panel.getAttribute('data-benefits');
+                if (panelTier === tier) {
+                    panel.classList.remove('hidden');
+                } else {
+                    panel.classList.add('hidden');
+                }
+            });
+        }
+
+        // Attach click handlers to tier option labels
+        document.querySelectorAll('.tier-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const tier = option.getAttribute('data-tier');
+                updateTierUI(tier);
+            });
+        });
+
+        // Wire up add-to-cart button
+        const addToCartBtn = document.getElementById('add-to-cart-btn');
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', () => {
+                const tier = tierData[selectedTier];
+                if (window.addToCart) {
+                    window.addToCart({
+                        id: tier.id,
+                        name: tier.name,
+                        price: tier.price,
+                        image: tier.image
+                    });
+                }
+            });
+        }
+
+        // Check URL params for pre-selected tier
+        const params = new URLSearchParams(window.location.search);
+        const urlTier = params.get('tier');
+        if (urlTier && tierData[urlTier]) {
+            updateTierUI(urlTier);
+        }
+    });
 </script>
-<script src="cart.js?v=7"></script>
+<script src="cart.js?v=8"></script>
 </body></html>
